@@ -1,0 +1,39 @@
+﻿<Window x:Class="MarkPredictor.Views.Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MarkPredictor.Views"
+        mc:Ignorable="d"
+        xmlns:tabData="clr-namespace:MarkPredictor.Views"
+        Title="" Height="600" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <TabControl x:Name="tabControl" Grid.Column="0">
+            <TabItem Header="Module Level">
+                <tabData:ModuleLevelView x:Name="ucTab1Data" />
+            </TabItem>
+            <TabItem Header="Level 4">
+                <tabData:Level4 x:Name="level4Tab" />
+            </TabItem>
+            <TabItem Header="Level 5">
+                <tabData:Level5 x:Name="level5Tab" />
+            </TabItem>
+            <TabItem Header="Level 6">
+                <tabData:Level6 x:Name="level6Tab" />
+            </TabItem>
+        </TabControl>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="22*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+            <Button Content="Summary"  Margin="8,8,8,8" Grid.Row="1"/>
+            <Button Content="Exit" Grid.Row="2"  Margin="8,8,8,10"/>
+        </Grid>
+    </Grid>
+</Window>
