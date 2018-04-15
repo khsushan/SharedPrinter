@@ -8,7 +8,7 @@ namespace MarkPredictor.Shared.Entites
     {
         public long Id { get; set; }
 
-        public long Name { get; set; }
+        public string Name { get; set; }
 
         public ICollection<Module> Modules { get; set; }
 

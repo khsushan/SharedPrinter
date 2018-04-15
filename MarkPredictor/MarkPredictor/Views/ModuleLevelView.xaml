@@ -19,7 +19,7 @@
             <RowDefinition Height="3*" />
             <RowDefinition Height="3*" />
             </Grid.RowDefinitions>
-            <Button Content="level 4" Height="25" Width="100" Margin="2,2,2,2" Grid.Row="0"/>
+            <Button Content="level 4" Height="25" Width="100" Margin="2,2,2,2" Grid.Row="0" Click="Level4Button_Click"/>
             <Button Content="level 2" Margin="2,2,2,2" Height="25" Width="100" Grid.Row="1"/>
             <Button Content="level 6" Margin="2,2,2,2" Height="25" Width="100" Grid.Row="2"/>
         </Grid>

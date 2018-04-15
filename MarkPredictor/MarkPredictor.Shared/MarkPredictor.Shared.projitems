@@ -16,9 +16,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Entites\ModuleLevel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entites\Student.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enum\AssessmentType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IMarkPredictorDbContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MarkPredictorDbContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\AssessmentModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\CourseModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\IModuleModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\LevelModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ModuleModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\StudentModel.cs" />

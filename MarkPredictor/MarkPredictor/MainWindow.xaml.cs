@@ -9,27 +9,12 @@ namespace MarkPredictor
     /// </summary>
     public partial class MainWindow : System.Windows.Window, INotifyPropertyChanged
     {
-        private object content;
         private TabView window;
+
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();;
             window = new TabView();
-            SubView = window;
-        }
-
-        public object SubView
-        {
-            get
-            {
-                return content;
-            }
-
-            set
-            {
-                value = content;
-                OnPropertyChanged("SubView");
-            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MarkPredictor.Views
 {
@@ -22,6 +11,12 @@ namespace MarkPredictor.Views
         public ModuleLevelView()
         {
             InitializeComponent();
+        }
+
+        private void Level4Button_Click(object sender, RoutedEventArgs e)
+        {
+            AddModuleView addModuleView = new AddModuleView(1,1);
+            addModuleView.Show();
         }
     }
 }

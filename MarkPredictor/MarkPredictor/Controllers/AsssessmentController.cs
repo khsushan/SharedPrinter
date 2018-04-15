@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MarkPredictor.Dto;
+using MarkPredictor.Shared.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,10 @@ namespace MarkPredictor.Controllers
 {
     public class AsssessmentController
     {
+
+        public int AddAssesment(AssessmenttDto assigmentDto)
+        {
+            return 0;
+        }
     }
 }
