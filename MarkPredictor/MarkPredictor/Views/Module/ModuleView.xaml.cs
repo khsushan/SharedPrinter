@@ -25,6 +25,7 @@ namespace MarkPredictor.Views.Module
         {
             InitializeComponent();
             moduleNameLable.Content = moduleDto.ModuleName;
+            assessmentList.ItemsSource = moduleDto.Assessments;
         }
     }
 }

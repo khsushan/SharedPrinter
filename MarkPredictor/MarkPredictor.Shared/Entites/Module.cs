@@ -14,6 +14,8 @@ namespace MarkPredictor.Shared.Entites
 
         public long CourseId { get; set; }
 
+        public double Credit { get; set; }
+
         public Course Course { get; set; }
 
         public ICollection<Assessment> Assessments { get; set; }

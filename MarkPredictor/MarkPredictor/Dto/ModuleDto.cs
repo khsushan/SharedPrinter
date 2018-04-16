@@ -16,6 +16,8 @@ namespace MarkPredictor.Dto
 
         public long CourseId { get; set; }
 
+        public double Credit { get; set; }
+
         public ICollection<AssessmentDto> Assessments { get; set; }
     }
 }

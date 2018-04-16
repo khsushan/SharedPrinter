@@ -92,6 +92,10 @@
     <Compile Include="Migrations\201804160157189_AddingAssessmentNameField.Designer.cs">
       <DependentUpon>201804160157189_AddingAssessmentNameField.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804160347210_AddingCreditFieldForModule.cs" />
+    <Compile Include="Migrations\201804160347210_AddingCreditFieldForModule.Designer.cs">
+      <DependentUpon>201804160347210_AddingCreditFieldForModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddAssessmentView.xaml.cs">
       <DependentUpon>AddAssessmentView.xaml</DependentUpon>
     </Compile>
@@ -190,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804160157189_AddingAssessmentNameField.resx">
       <DependentUpon>201804160157189_AddingAssessmentNameField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804160347210_AddingCreditFieldForModule.resx">
+      <DependentUpon>201804160347210_AddingCreditFieldForModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

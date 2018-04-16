@@ -4,13 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MarkPredictor.Views.Module"
-             mc:Ignorable="d" Margin="2,2,2,2" Width="300">
+             mc:Ignorable="d" Margin="2,2,2,2">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*" />
-            <RowDefinition Height="3*" />
-            <RowDefinition Height="3*" />
-            <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
@@ -33,20 +33,15 @@
                       Grid.Column="1" VerticalAlignment="Center"  Margin="0,0,3,0"/>
         </Grid>
         <Grid Grid.Row="2">
-            <DataGrid   Name="bookGrid"  
+            <DataGrid   Name="assessmentList"  
                       CanUserReorderColumns="True" CanUserResizeColumns="True" 
+                        AutoGenerateColumns = "False"
           CanUserResizeRows="False" CanUserSortColumns="True"  
                        >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Assement Type" Binding="{Binding Path=AssementType}" />
+                    <DataGridTextColumn Header="Assement Type" Binding="{Binding Path= AssessmentType}" />
                     <DataGridTextColumn Header="Weight" Binding="{Binding Path=Weight}" />
-                    <DataGridTemplateColumn Header="Mark">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock  Margin="3,1" Text="{Binding Path= Mark,Mode=TwoWay}"/>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Mark" Binding="{Binding Path=Mark}" />
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
