@@ -22,6 +22,7 @@ namespace MarkPredictor.Views
         private void LoadLevel4Data()
         {
            var levelDto =  _levelController.GetLevelDetails(1);
+            level4ContentView.Children.Capacity = levelDto.Modules.Count;
             foreach (var moduleDto in levelDto.Modules)
             {
                 level4ContentView.Children.Add(new ModuleView(moduleDto));
