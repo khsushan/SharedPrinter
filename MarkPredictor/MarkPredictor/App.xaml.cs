@@ -15,18 +15,20 @@ namespace MarkPredictor
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            var builder = new ContainerBuilder();
-            BuildupContainer(builder);
-            InstanceFactory.Container = builder.Build();
+            ConfigAutofac();
+            Common.AutoMapper.Initialize();
             MainWindow mainWindows = new MainWindow();
             mainWindows.Show();
         }
 
-        private void BuildupContainer(ContainerBuilder builder)
+        private void ConfigAutofac()
         {
+            var builder = new ContainerBuilder();
             builder.RegisterType<MarkPredictorDbContext>().InstancePerLifetimeScope();
             builder.RegisterType<ModuleModel>();
+            builder.RegisterType<LevelModel>();
             builder.RegisterType<ModuleController>().As<IModuleController>().InstancePerLifetimeScope();
+            InstanceFactory.Container = builder.Build();
         }   
     }
 }

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace MarkPredictor.Dto
 {
-    public class AssessmenttDto
+    public class LevelDto
     {
         public long Id { get; set; }
 
-        public string Name { get; set; }
+        public string LevelName { get; set; }
 
-        public double Precentage { get; set; }
+        public ICollection<ModuleDto> Modules { get; set; }
     }
 }

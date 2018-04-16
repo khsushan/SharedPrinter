@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using MarkPredictor.Controllers.Level;
+using MarkPredictor.Views.Module;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MarkPredictor.Views
 {
@@ -20,9 +9,23 @@ namespace MarkPredictor.Views
     /// </summary>
     public partial class Level4 : UserControl
     {
+        private LevelController _levelController;
+
         public Level4()
         {
             InitializeComponent();
+            _levelController = new LevelController();
+            LoadLevel4Data();
+            
+        }
+
+        private void LoadLevel4Data()
+        {
+           var levelDto =  _levelController.GetLevelDetails(1);
+            foreach (var moduleDto in levelDto.Modules)
+            {
+                level4ContentView.Children.Add(new ModuleView(moduleDto));
+            }
         }
     }
 }

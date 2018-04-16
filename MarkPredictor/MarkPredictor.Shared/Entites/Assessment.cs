@@ -11,6 +11,8 @@ namespace MarkPredictor.Shared.Entites
 
         public AssessmentType  AssessmentType { get; set; }
 
+        public string Name { get; set; }
+
         public double Weight { get; set; }
 
         public int Mark { get; set; }

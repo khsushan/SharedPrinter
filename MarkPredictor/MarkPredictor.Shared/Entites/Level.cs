@@ -9,5 +9,7 @@ namespace MarkPredictor.Shared.Entites
         public long Id { get; set; }
 
         public string LevelName { get; set; }
+
+        public ICollection<Module> Modules { get; set; }
     }
 }

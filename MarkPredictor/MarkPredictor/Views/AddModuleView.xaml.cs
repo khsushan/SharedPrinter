@@ -37,7 +37,7 @@ namespace MarkPredictor.Views
                     LevelId = _levelId
                 };
                 _moduleController.AddModule(moduleDto);
-
+                moduleNameText.Text = string.Empty;
             }
         }
     }

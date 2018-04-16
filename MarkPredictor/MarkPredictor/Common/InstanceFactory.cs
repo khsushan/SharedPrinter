@@ -19,6 +19,11 @@ namespace MarkPredictor.Common
             return Container.Resolve<ModuleModel>();
         }
 
+        public static LevelModel GetLevelModelInstance()
+        {
+            return Container.Resolve<LevelModel>();
+        }
+
         public static IModuleController GetModulControllerInstance()
         {
             return Container.Resolve<IModuleController>();

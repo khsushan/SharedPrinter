@@ -11,7 +11,7 @@ namespace MarkPredictor.Controllers
     public class AsssessmentController
     {
 
-        public int AddAssesment(AssessmenttDto assigmentDto)
+        public int AddAssesment(AssessmentDto assigmentDto)
         {
             return 0;
         }

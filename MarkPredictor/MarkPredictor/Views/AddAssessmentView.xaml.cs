@@ -66,10 +66,10 @@ namespace MarkPredictor.Views
             double assigmentPrecentage = double.Parse(assigmentPrecentageText.Text);
             if (assigmentName.Trim() !=  string.Empty && assigmentPrecentage < 0)
             {
-                AssessmenttDto assigmentDto = new AssessmenttDto
+                AssessmentDto assigmentDto = new AssessmentDto
                 {
                     Name = assigmentName,
-                    Precentage = assigmentPrecentage
+                    Weight = assigmentPrecentage
                 };
             }
         }

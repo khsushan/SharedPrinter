@@ -39,6 +39,10 @@
       <HintPath>..\packages\Autofac.4.7.0\lib\net45\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -51,6 +55,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,13 +76,21 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Common\InstanceFactory.cs" />
+    <Compile Include="Common\AutoMapper.cs" />
+    <Compile Include="Controllers\Level\ILevelController.cs" />
+    <Compile Include="Controllers\Level\LevelController.cs" />
     <Compile Include="Controllers\Module\ModuleController.cs" />
     <Compile Include="Controllers\Module\IModuleController.cs" />
-    <Compile Include="Dto\AssigmentDto.cs" />
+    <Compile Include="Dto\AssessmentDto.cs" />
+    <Compile Include="Dto\LevelDto.cs" />
     <Compile Include="Dto\ModuleDto.cs" />
     <Compile Include="Migrations\201804150545045_ChangeingCourseNameDatatypeToString.cs" />
     <Compile Include="Migrations\201804150545045_ChangeingCourseNameDatatypeToString.Designer.cs">
       <DependentUpon>201804150545045_ChangeingCourseNameDatatypeToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804160157189_AddingAssessmentNameField.cs" />
+    <Compile Include="Migrations\201804160157189_AddingAssessmentNameField.Designer.cs">
+      <DependentUpon>201804160157189_AddingAssessmentNameField.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\AddAssessmentView.xaml.cs">
       <DependentUpon>AddAssessmentView.xaml</DependentUpon>
@@ -96,6 +109,9 @@
     </Compile>
     <Compile Include="Views\ModuleLevelView.xaml.cs">
       <DependentUpon>ModuleLevelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Module\ModuleView.xaml.cs">
+      <DependentUpon>ModuleView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TabView.xaml.cs">
       <DependentUpon>TabView.xaml</DependentUpon>
@@ -138,6 +154,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Module\ModuleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\TabView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -168,6 +188,9 @@
     <EmbeddedResource Include="Migrations\201804150545045_ChangeingCourseNameDatatypeToString.resx">
       <DependentUpon>201804150545045_ChangeingCourseNameDatatypeToString.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804160157189_AddingAssessmentNameField.resx">
+      <DependentUpon>201804160157189_AddingAssessmentNameField.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -182,7 +205,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Assessment\" />
+  </ItemGroup>
   <Import Project="..\MarkPredictor.Shared\MarkPredictor.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

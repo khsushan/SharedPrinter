@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="MarkPredictor.Views.Module.ModuleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MarkPredictor.Views.Module"
+             mc:Ignorable="d" Margin="2,2,2,2" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <Label Content="Module Name" Grid.Column="0" VerticalAlignment="Center" />
+            <Label Name="moduleNameLable" Grid.Column="1"
+                      VerticalAlignment="Center"  Margin="0,0,3,0"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <Label Content="Module Average :"  
+                   Grid.Column="0" VerticalAlignment="Center" />
+            <Label  Name="modduleAvarageLable" 
+                      Grid.Column="1" VerticalAlignment="Center"  Margin="0,0,3,0"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <DataGrid   Name="bookGrid"  
+                      CanUserReorderColumns="True" CanUserResizeColumns="True" 
+          CanUserResizeRows="False" CanUserSortColumns="True"  
+                       >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Assement Type" Binding="{Binding Path=AssementType}" />
+                    <DataGridTextColumn Header="Weight" Binding="{Binding Path=Weight}" />
+                    <DataGridTemplateColumn Header="Mark">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock  Margin="3,1" Text="{Binding Path= Mark,Mode=TwoWay}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid Grid.Row="3" HorizontalAlignment="Right">
+            <Button Content="Add Assessment" Name="clearBtn"  Width="100" Height="25"  Margin="2,0,2,0" Grid.Column="1" />
+        </Grid>
+    </Grid>
+</UserControl>
