@@ -32,7 +32,7 @@ namespace MarkPredictor.Views
             loadModuleViews();
             _eventAggregator = InstanceFactory.GetEventAggregatorInstance();
             //alter add module refresh event
-            _eventAggregator.GetEvent<ModuleLoadEvent>().Subscribe(LoadLevel4Data);
+            _eventAggregator.GetEvent<ModuleLoadEvent>().Subscribe(ModuleAddEvent);
             _eventAggregator.GetEvent<LevelMarkChangeEvent>().Subscribe(ModuleMarkChangeEvent);
 
         }
@@ -93,6 +93,17 @@ namespace MarkPredictor.Views
             {
                 level4ContentView.Children.Add(new ModuleView(moduleDto));
             }
+        }
+
+        public void ModuleAddEvent(ModuleDto moduleDto)
+        {
+            if (moduleDto.LevelId ==1)
+            {
+                level4ContentView.Children.Add(new ModuleView(moduleDto));
+                _levelDto.Modules.Add(moduleDto);
+                CalculateLevelAverage(moduleDto.LevelId);
+            }
+            
         }
 
 

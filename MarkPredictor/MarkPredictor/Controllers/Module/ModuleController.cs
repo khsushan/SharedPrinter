@@ -1,4 +1,5 @@
-﻿using MarkPredictor.Dto;
+﻿using AutoMapper;
+using MarkPredictor.Dto;
 using MarkPredictor.Shared.Models;
 
 namespace MarkPredictor.Controllers.Module
@@ -12,13 +13,13 @@ namespace MarkPredictor.Controllers.Module
             _moduleModel = moduleModel;
         }
 
-        public int AddModule(ModuleDto moduleDto)
+        public ModuleDto AddModule(ModuleDto moduleDto)
         {
             _moduleModel.ModuleName = moduleDto.ModuleName;
             _moduleModel.CourseId = moduleDto.CourseId;
             _moduleModel.LevelId = moduleDto.LevelId;
             _moduleModel.Credit = moduleDto.Credit;
-            return _moduleModel.Save();
+            return Mapper.Map<ModuleDto>(_moduleModel.Save());
         }
     }
 }

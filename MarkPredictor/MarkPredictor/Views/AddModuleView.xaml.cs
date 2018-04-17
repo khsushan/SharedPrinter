@@ -42,9 +42,9 @@ namespace MarkPredictor.Views
                     LevelId = _levelId,
                     Credit = credit
                 };
-                _moduleController.AddModule(moduleDto);
+                moduleDto = _moduleController.AddModule(moduleDto);
                 moduleNameText.Text = string.Empty;
-                _eventAggregator.GetEvent<ModuleLoadEvent>().Publish(_levelId);
+                _eventAggregator.GetEvent<ModuleLoadEvent>().Publish(moduleDto);
             }
         }
     }

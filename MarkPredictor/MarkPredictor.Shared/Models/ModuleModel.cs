@@ -23,7 +23,7 @@ namespace MarkPredictor.Shared.Models
 
         public double Credit { get;  set;}
 
-        public int Save()
+        public Module Save()
         {
             Module module = new Module
             {
@@ -33,7 +33,8 @@ namespace MarkPredictor.Shared.Models
                 Credit = Credit
             };
             _markPredictorDbContext.Module.Add(module);
-            return _markPredictorDbContext.SaveChanges();
+           _markPredictorDbContext.SaveChanges();
+            return module;
         }
     }
 }
