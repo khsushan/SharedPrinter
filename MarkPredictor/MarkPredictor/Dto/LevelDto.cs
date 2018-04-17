@@ -12,6 +12,6 @@ namespace MarkPredictor.Dto
 
         public string LevelName { get; set; }
 
-        public ICollection<ModuleDto> Modules { get; set; }
+        public IList<ModuleDto> Modules { get; set; }
     }
 }

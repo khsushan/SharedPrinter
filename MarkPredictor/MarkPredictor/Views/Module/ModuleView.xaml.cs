@@ -32,7 +32,7 @@ namespace MarkPredictor.Views.Module
             eventAggregator = InstanceFactory.GetEventAggregatorInstance();
             eventAggregator.GetEvent<AssessmentLoadEvent>().Subscribe(ReloadAssessment);
             assessmentList.CellEditEnding += assementList_CellEditEnding;
-            CalculateModuleAverage();
+            ModuleAverage = _moduleDto.ModuleAverage;
 
         }
 
@@ -107,13 +107,8 @@ namespace MarkPredictor.Views.Module
 
         private void CalculateModuleAverage()
         {
-            var average = 0.0;
-            foreach (var assessment in _moduleDto.Assessments)
-            {
-                average += assessment.Mark * ( assessment.Weight / 100.0);
-            }
-
-            ModuleAverage = average;
+            ModuleAverage = AverageCalculator.CalculateModuleAverage(_moduleDto);
+            eventAggregator.GetEvent<LevelMarkChangeEvent>().Publish(_moduleDto.LevelId);
         }
 
     }

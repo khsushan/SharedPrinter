@@ -5,7 +5,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MarkPredictor.Views"
              mc:Ignorable="d" >
-    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-        <StackPanel Name="level4ContentView" />
-    </ScrollViewer>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width ="2*" />
+                <ColumnDefinition Width ="3*" />
+            </Grid.ColumnDefinitions>
+            <Label Content="Level Average :"  
+                   Grid.Column="0" VerticalAlignment="Center" />
+            <Label  Name="modduleAvarageLable" Content="{Binding LevelAverage}"
+                      Grid.Column="1" VerticalAlignment="Center"  Margin="0,0,3,0"/>
+        </Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="1">
+            <StackPanel Name="level4ContentView" />
+        </ScrollViewer>
+    </Grid>
 </UserControl>

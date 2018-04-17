@@ -15,5 +15,7 @@ namespace MarkPredictor.Dto
         public double Credit { get; set; }
 
         public ObservableCollection<AssessmentDto> Assessments { get; set; }
+
+        public double ModuleAverage { get; set; }
     }
 }

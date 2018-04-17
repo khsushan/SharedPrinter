@@ -91,6 +91,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\AverageCalculator.cs" />
     <Compile Include="Common\InstanceFactory.cs" />
     <Compile Include="Common\AutoMapper.cs" />
     <Compile Include="Controllers\Assessment\IAssessmentController.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Dto\LevelDto.cs" />
     <Compile Include="Dto\ModuleDto.cs" />
     <Compile Include="MessageBus\Event\AssessmentLoadEvent.cs" />
+    <Compile Include="MessageBus\Event\LevelMarkChangeEvent.cs" />
     <Compile Include="MessageBus\Event\ModuleLoadEvent.cs" />
     <Compile Include="Migrations\201804150545045_ChangeingCourseNameDatatypeToString.cs" />
     <Compile Include="Migrations\201804150545045_ChangeingCourseNameDatatypeToString.Designer.cs">
@@ -125,6 +127,7 @@
     <Compile Include="Views\AddModuleView.xaml.cs">
       <DependentUpon>AddModuleView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\BaseLevelUserControl.cs" />
     <Compile Include="Views\Level4.xaml.cs">
       <DependentUpon>Level4.xaml</DependentUpon>
     </Compile>
