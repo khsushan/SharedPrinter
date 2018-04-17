@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MarkPredictor.Views"
         mc:Ignorable="d"
-        Title="AddModuleView" Height="100" Width="300">
+        Title="AddModuleView" Height="120" Width="300">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
             <RowDefinition Height="3*" />
             <RowDefinition Height="3*" />
         </Grid.RowDefinitions>
@@ -21,7 +22,17 @@
             <TextBox  Name="moduleNameText" 
                       Grid.Column="1" VerticalAlignment="Center"  Margin="0,0,3,0"/>
         </Grid>
-        <Grid Grid.Row="1" HorizontalAlignment="Right">
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <Label Content="Credit :"  
+                   Grid.Column="0" VerticalAlignment="Center" />
+            <TextBox  Name="moduleCreditText" 
+                      Grid.Column="1" VerticalAlignment="Center"  Margin="0,0,3,0"/>
+        </Grid>
+        <Grid Grid.Row="2" HorizontalAlignment="Right">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*" />
                 <ColumnDefinition Width="3*" />

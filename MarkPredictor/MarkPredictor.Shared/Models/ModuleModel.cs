@@ -21,13 +21,16 @@ namespace MarkPredictor.Shared.Models
 
         public long CourseId { get; set; }
 
+        public double Credit { get;  set;}
+
         public int Save()
         {
             Module module = new Module
             {
                 ModuleName = ModuleName,
                 CourseId = CourseId,
-                LevelId = LevelId
+                LevelId = LevelId,
+                Credit = Credit
             };
             _markPredictorDbContext.Module.Add(module);
             return _markPredictorDbContext.SaveChanges();

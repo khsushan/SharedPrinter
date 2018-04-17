@@ -37,6 +37,7 @@
                 <DataGrid Width="400"  Name="assessmentList"  Margin="0,0,0,0" 
                       CanUserReorderColumns="True" CanUserResizeColumns="True" 
                         AutoGenerateColumns = "False"
+                        ItemsSource="{Binding AssessmentList}"
           CanUserResizeRows="False" CanUserSortColumns="True"  
                        >
                     <DataGrid.Columns>

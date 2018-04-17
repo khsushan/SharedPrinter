@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MarkPredictor"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterOwner"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <ContentControl  Margin="2,2,2,2">

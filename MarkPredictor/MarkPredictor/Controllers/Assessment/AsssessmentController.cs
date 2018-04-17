@@ -13,10 +13,11 @@ namespace MarkPredictor.Controllers.Assessment
     public class AsssessmentController : IAssessmentController
     {
 
-        public int AddAssesment(AssessmentDto assigmentDto)
+        public AssessmentDto AddAssesment(AssessmentDto assigmentDto)
         {
             var assessmentModel = InstanceFactory.GetAssessmentModelInstance();
-            return assessmentModel.AddAssessment(Mapper.Map<Shared.Entites.Assessment>(assigmentDto));
+            var assessment = assessmentModel.AddAssessment(Mapper.Map<Shared.Entites.Assessment>(assigmentDto));
+            return Mapper.Map<AssessmentDto>(assessment);
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using MarkPredictor.Common;
 using MarkPredictor.Controllers.Assessment;
 using MarkPredictor.Dto;
+using MarkPredictor.MessageBus.Event;
+using Prism.Events;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -16,6 +18,7 @@ namespace MarkPredictor.Views
         public string _selectedAssigmentType;
         public event PropertyChangedEventHandler PropertyChanged;
         private IAssessmentController _assessmentController;
+        private readonly IEventAggregator _eventAggregator;
 
 
         public AddAssesmentView()
@@ -24,6 +27,7 @@ namespace MarkPredictor.Views
             _assigmentTypes.Add("Exam");
             _assigmentTypes.Add("Courese Work");
             _assessmentController = InstanceFactory.GetAssessmentControllerInstance();
+            _eventAggregator = InstanceFactory.GetEventAggregatorInstance();
             _selectedAssigmentType = _assigmentTypes[0];
             AssigmentTypes = _assigmentTypes;
             this.DataContext = this;
@@ -86,7 +90,8 @@ namespace MarkPredictor.Views
                     assigmentDto.AssessmentType = Shared.Enum.AssessmentType.CourseWork;
                 }
 
-                _assessmentController.AddAssesment(assigmentDto);
+                assigmentDto =  _assessmentController.AddAssesment(assigmentDto);
+                _eventAggregator.GetEvent<AssessmentLoadEvent>().Publish(assigmentDto);
                 assigmentNameText.Text = string.Empty;
                 assigmentPrecentageText.Text = "0";
                 SelectedAssigmentType = "Exam";

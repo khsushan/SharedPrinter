@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 
 namespace MarkPredictor.Dto
 {
@@ -18,6 +14,6 @@ namespace MarkPredictor.Dto
 
         public double Credit { get; set; }
 
-        public ICollection<AssessmentDto> Assessments { get; set; }
+        public ObservableCollection<AssessmentDto> Assessments { get; set; }
     }
 }

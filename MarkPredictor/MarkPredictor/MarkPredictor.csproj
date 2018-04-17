@@ -101,6 +101,8 @@
     <Compile Include="Dto\AssessmentDto.cs" />
     <Compile Include="Dto\LevelDto.cs" />
     <Compile Include="Dto\ModuleDto.cs" />
+    <Compile Include="MessageBus\Event\AssessmentLoadEvent.cs" />
+    <Compile Include="MessageBus\Event\ModuleLoadEvent.cs" />
     <Compile Include="Migrations\201804150545045_ChangeingCourseNameDatatypeToString.cs" />
     <Compile Include="Migrations\201804150545045_ChangeingCourseNameDatatypeToString.Designer.cs">
       <DependentUpon>201804150545045_ChangeingCourseNameDatatypeToString.cs</DependentUpon>

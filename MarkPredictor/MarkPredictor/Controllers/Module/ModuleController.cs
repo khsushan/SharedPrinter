@@ -17,6 +17,7 @@ namespace MarkPredictor.Controllers.Module
             _moduleModel.ModuleName = moduleDto.ModuleName;
             _moduleModel.CourseId = moduleDto.CourseId;
             _moduleModel.LevelId = moduleDto.LevelId;
+            _moduleModel.Credit = moduleDto.Credit;
             return _moduleModel.Save();
         }
     }

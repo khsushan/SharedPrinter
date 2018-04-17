@@ -1,7 +1,7 @@
 ﻿using MarkPredictor.Common;
 using MarkPredictor.Controllers.Module;
 using MarkPredictor.Dto;
-using MarkPredictor.Shared.MessageBus.Event;
+using MarkPredictor.MessageBus.Event;
 using Prism.Events;
 using System.Windows;
 
@@ -32,17 +32,19 @@ namespace MarkPredictor.Views
 
         private void okBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (moduleNameText.Text.Trim() != string.Empty)
+            var credit = double.Parse(moduleCreditText.Text);
+            if (moduleNameText.Text.Trim() != string.Empty && credit > 0)
             {
                 ModuleDto moduleDto = new ModuleDto
                 {
                     ModuleName = moduleNameText.Text,
                     CourseId = _courseId,
-                    LevelId = _levelId
+                    LevelId = _levelId,
+                    Credit = credit
                 };
                 _moduleController.AddModule(moduleDto);
                 moduleNameText.Text = string.Empty;
-                _eventAggregator.GetEvent<ModuleLoadEvent>().Publish(string.Empty);
+                _eventAggregator.GetEvent<ModuleLoadEvent>().Publish(_levelId);
             }
         }
     }

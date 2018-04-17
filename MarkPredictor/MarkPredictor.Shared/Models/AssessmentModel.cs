@@ -27,10 +27,11 @@ namespace MarkPredictor.Shared.Models
             _markPredictorDbContext = markPredictorDbContext;
         }
 
-        public int AddAssessment(Assessment assessment)
+        public Assessment AddAssessment(Assessment assessment)
         {
             _markPredictorDbContext.Assessment.Add(assessment);
-            return _markPredictorDbContext.SaveChanges();
+            _markPredictorDbContext.SaveChanges();
+            return assessment;
         }
 
 

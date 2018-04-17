@@ -1,6 +1,6 @@
 ﻿using MarkPredictor.Common;
 using MarkPredictor.Controllers.Level;
-using MarkPredictor.Shared.MessageBus.Event;
+using MarkPredictor.MessageBus.Event;
 using MarkPredictor.Views.Module;
 using Prism.Events;
 using System.Windows.Controls;
@@ -20,21 +20,25 @@ namespace MarkPredictor.Views
         {
             InitializeComponent();
             _levelController = new LevelController();
-            LoadLevel4Data(string.Empty);
+            LoadLevel4Data(1);
             _eventAggregator = InstanceFactory.GetEventAggregatorInstance();
             _eventAggregator.GetEvent<ModuleLoadEvent>().Subscribe(LoadLevel4Data);
             
         }
 
-        private void LoadLevel4Data(string s)
+        private void LoadLevel4Data(long levelId)
         {
-           var levelDto =  _levelController.GetLevelDetails(1);
-            level4ContentView.Children.Capacity = levelDto.Modules.Count;
-            level4ContentView.Children.Clear();
-            foreach (var moduleDto in levelDto.Modules)
+            if (levelId == 1)
             {
-                level4ContentView.Children.Add(new ModuleView(moduleDto));
+                var levelDto = _levelController.GetLevelDetails(1);
+                level4ContentView.Children.Capacity = levelDto.Modules.Count;
+                level4ContentView.Children.Clear();
+                foreach (var moduleDto in levelDto.Modules)
+                {
+                    level4ContentView.Children.Add(new ModuleView(moduleDto));
+                }
             }
+         
         }
 
 

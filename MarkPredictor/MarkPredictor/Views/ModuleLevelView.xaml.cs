@@ -16,7 +16,7 @@ namespace MarkPredictor.Views
         private void Level4Button_Click(object sender, RoutedEventArgs e)
         {
             AddModuleView addModuleView = new AddModuleView(1,1);
-            addModuleView.Show();
+            addModuleView.ShowDialog();
         }
     }
 }

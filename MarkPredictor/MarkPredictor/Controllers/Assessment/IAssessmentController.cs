@@ -9,6 +9,6 @@ namespace MarkPredictor.Controllers.Assessment
 {
     public interface IAssessmentController
     {
-        int AddAssesment(AssessmentDto assigmentDto);
+        AssessmentDto AddAssesment(AssessmentDto assigmentDto);
     }
 }
