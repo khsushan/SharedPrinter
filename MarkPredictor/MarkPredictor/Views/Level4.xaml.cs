@@ -25,13 +25,13 @@ namespace MarkPredictor.Views
         public Level4()
         {
             DataContext = this;
+            LevelAverage = 0;
             InitializeComponent();
             _levelController = new LevelController();
-            LoadLevel4Data(1);
+             LoadLevel4Data(1);
             CalculateLevelAverage(1);
             loadModuleViews();
             _eventAggregator = InstanceFactory.GetEventAggregatorInstance();
-            //alter add module refresh event
             _eventAggregator.GetEvent<ModuleLoadEvent>().Subscribe(ModuleAddEvent);
             _eventAggregator.GetEvent<LevelMarkChangeEvent>().Subscribe(ModuleMarkChangeEvent);
 
@@ -41,7 +41,7 @@ namespace MarkPredictor.Views
         {
             if (levelId == 1)
             {
-                _levelDto = _levelController.GetLevelDetails(1);
+                _levelDto = _levelController.GetLevelDetails(levelId);
                 level4ContentView.Children.Capacity = _levelDto.Modules.Count;
                 level4ContentView.Children.Clear();
             }         
