@@ -20,6 +20,7 @@ namespace MarkPredictor.Views.Module
 
         public event PropertyChangedEventHandler PropertyChanged;
         private ICollection<AssessmentDto> _assessments;
+        private double _moduleAverage;
 
         public ModuleView(ModuleDto moduleDto)
         {
@@ -31,6 +32,7 @@ namespace MarkPredictor.Views.Module
             eventAggregator = InstanceFactory.GetEventAggregatorInstance();
             eventAggregator.GetEvent<AssessmentLoadEvent>().Subscribe(ReloadAssessment);
             assessmentList.CellEditEnding += assementList_CellEditEnding;
+            CalculateModuleAverage();
 
         }
 
@@ -61,6 +63,16 @@ namespace MarkPredictor.Views.Module
             }
         }
 
+        public double ModuleAverage
+        {
+            get { return _moduleAverage; }
+            set
+            {
+                _moduleAverage = value;
+                OnPropertyChanged("ModuleAverage");
+            }
+        }
+
         private void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
@@ -79,13 +91,29 @@ namespace MarkPredictor.Views.Module
                     {
                         int rowIndex = e.Row.GetIndex();
                         var el = e.EditingElement as TextBox;
-                        var text = el.Text;
-                        // rowIndex has the row index
-                        // bindingPath has the column's binding
-                        // el.Text has the new, user-entered value
+                        try
+                        {
+                            _moduleDto.Assessments[rowIndex].Mark = double.Parse(el.Text);
+                            CalculateModuleAverage();
+                        }
+                        catch (System.FormatException)
+                        {
+                            el.Text = "0";
+                        }
                     }
                 }
             }
+        }
+
+        private void CalculateModuleAverage()
+        {
+            var average = 0.0;
+            foreach (var assessment in _moduleDto.Assessments)
+            {
+                average += assessment.Mark * ( assessment.Weight / 100.0);
+            }
+
+            ModuleAverage = average;
         }
 
     }

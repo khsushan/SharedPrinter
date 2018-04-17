@@ -30,7 +30,7 @@
                 </Grid.ColumnDefinitions>
                 <Label Content="Module Average :"  
                    Grid.Column="0" VerticalAlignment="Center" />
-                <Label  Name="modduleAvarageLable" 
+                <Label  Name="modduleAvarageLable" Content="{Binding ModuleAverage}"
                       Grid.Column="1" VerticalAlignment="Center"  Margin="0,0,3,0"/>
             </Grid>
             <Grid Grid.Row="2">
