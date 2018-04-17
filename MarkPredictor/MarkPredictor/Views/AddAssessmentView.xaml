@@ -21,7 +21,7 @@
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
             <Label Content="Course Work Type :" Grid.Column="0" VerticalAlignment="Center" />
-            <ComboBox Name="courseWorkTypeCmb" Grid.Column="1"
+            <ComboBox Name="assementTypeCmb" Grid.Column="1"
                       ItemsSource="{Binding AssigmentTypes}" 
                       SelectedItem="{Binding SelectedAssigmentType, Mode=TwoWay}"
                       VerticalAlignment="Center"  Margin="0,0,3,0"/>
@@ -41,7 +41,7 @@
                 <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
-            <Label Content="Assigment Name :" Grid.Column="0" VerticalAlignment="Center" />
+            <Label Content="Weight :" Grid.Column="0" VerticalAlignment="Center" />
             <TextBox  Name="assigmentPrecentageText" Grid.Column="1" VerticalAlignment="Center"  Margin="0,0,3,0"/>
         </Grid>
         <Grid Grid.Row="3" HorizontalAlignment="Right">

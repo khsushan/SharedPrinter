@@ -1,7 +1,9 @@
 ﻿using Autofac;
 using Autofac.Core;
+using MarkPredictor.Controllers.Assessment;
 using MarkPredictor.Controllers.Module;
 using MarkPredictor.Shared.Models;
+using Prism.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,9 +26,24 @@ namespace MarkPredictor.Common
             return Container.Resolve<LevelModel>();
         }
 
+        public static AssessmentModel GetAssessmentModelInstance()
+        {
+            return Container.Resolve<AssessmentModel>();
+        }
+
         public static IModuleController GetModulControllerInstance()
         {
             return Container.Resolve<IModuleController>();
+        }
+
+        public static IAssessmentController GetAssessmentControllerInstance()
+        {
+            return Container.Resolve<IAssessmentController>();
+        }
+
+        public static IEventAggregator GetEventAggregatorInstance()
+        {
+            return Container.Resolve<IEventAggregator>();
         }
     }
 }

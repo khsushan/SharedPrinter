@@ -1,8 +1,10 @@
 ﻿using Autofac;
 using MarkPredictor.Common;
+using MarkPredictor.Controllers.Assessment;
 using MarkPredictor.Controllers.Module;
 using MarkPredictor.Shared;
 using MarkPredictor.Shared.Models;
+using Prism.Events;
 using System.Windows;
 
 namespace MarkPredictor
@@ -27,7 +29,10 @@ namespace MarkPredictor
             builder.RegisterType<MarkPredictorDbContext>().InstancePerLifetimeScope();
             builder.RegisterType<ModuleModel>();
             builder.RegisterType<LevelModel>();
+            builder.RegisterType<AssessmentModel>();            
             builder.RegisterType<ModuleController>().As<IModuleController>().InstancePerLifetimeScope();
+            builder.RegisterType<AsssessmentController>().As<IAssessmentController>().InstancePerLifetimeScope();
+            builder.RegisterType<EventAggregator>().As<IEventAggregator>().InstancePerLifetimeScope();
             InstanceFactory.Container = builder.Build();
         }   
     }

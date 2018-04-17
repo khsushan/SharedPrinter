@@ -18,6 +18,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Enum\AssessmentType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IMarkPredictorDbContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MarkPredictorDbContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MessageBus\Event\ModuleLoadEvent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\AssessmentModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\CourseModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\IModuleModel.cs" />

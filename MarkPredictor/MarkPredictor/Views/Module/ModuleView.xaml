@@ -5,48 +5,51 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MarkPredictor.Views.Module"
              mc:Ignorable="d" Margin="2,2,2,2">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="10*" />
-            <RowDefinition Height="2*" />
-        </Grid.RowDefinitions>
+    <Border BorderBrush="Black" BorderThickness="2">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*" />
-                <ColumnDefinition Width="3*" />
-            </Grid.ColumnDefinitions>
-            <Label Content="Module Name" Grid.Column="0" VerticalAlignment="Center" />
-            <Label Name="moduleNameLable" Grid.Column="1"
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Module Name" Grid.Column="0" VerticalAlignment="Center" />
+                <Label Name="moduleNameLable" Grid.Column="1"
                       VerticalAlignment="Center"  Margin="0,0,3,0"/>
-        </Grid>
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*" />
-                <ColumnDefinition Width="3*" />
-            </Grid.ColumnDefinitions>
-            <Label Content="Module Average :"  
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Module Average :"  
                    Grid.Column="0" VerticalAlignment="Center" />
-            <Label  Name="modduleAvarageLable" 
+                <Label  Name="modduleAvarageLable" 
                       Grid.Column="1" VerticalAlignment="Center"  Margin="0,0,3,0"/>
-        </Grid>
-        <Grid Grid.Row="2">
-            <DataGrid   Name="assessmentList"  
+            </Grid>
+            <Grid Grid.Row="2">
+                <DataGrid Width="400"  Name="assessmentList"  Margin="0,0,0,0" 
                       CanUserReorderColumns="True" CanUserResizeColumns="True" 
                         AutoGenerateColumns = "False"
           CanUserResizeRows="False" CanUserSortColumns="True"  
                        >
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Assement Type" Binding="{Binding Path= AssessmentType}" />
-                    <DataGridTextColumn Header="Weight" Binding="{Binding Path=Weight}" />
-                    <DataGridTextColumn Header="Mark" Binding="{Binding Path=Mark}" />
-                </DataGrid.Columns>
-            </DataGrid>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn IsReadOnly="True" Width="2*" Header="Assement Type" Binding="{Binding Path= AssessmentType}" />
+                        <DataGridTextColumn IsReadOnly="True" Width="1*" Header="Weight" Binding="{Binding Path=Weight}" />
+                        <DataGridTextColumn IsReadOnly="True" Width="2*" Header="Name" Binding="{Binding Path=Name}" />
+                        <DataGridTextColumn Width="3*" Header="Mark" Binding="{Binding Path=Mark}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            <Grid Grid.Row="3" HorizontalAlignment="Right">
+                <Button Content="Add Assessment" Name="addAssementBtn"  Width="100" Height="25"  Margin="2,0,2,0" Grid.Column="1" Click="addAssementBtn_Click" />
+            </Grid>
         </Grid>
-        <Grid Grid.Row="3" HorizontalAlignment="Right">
-            <Button Content="Add Assessment" Name="clearBtn"  Width="100" Height="25"  Margin="2,0,2,0" Grid.Column="1" />
-        </Grid>
-    </Grid>
+    </Border>
 </UserControl>

@@ -1,4 +1,6 @@
-﻿using MarkPredictor.Dto;
+﻿using MarkPredictor.Common;
+using MarkPredictor.Controllers.Assessment;
+using MarkPredictor.Dto;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -9,10 +11,11 @@ namespace MarkPredictor.Views
     /// </summary>
     public partial class AddAssesmentView : System.Windows.Window, INotifyPropertyChanged
     {
-        private int _level = 0;
+        private long _moduleId = 0;
         private IList<string> _assigmentTypes;
         public string _selectedAssigmentType;
         public event PropertyChangedEventHandler PropertyChanged;
+        private IAssessmentController _assessmentController;
 
 
         public AddAssesmentView()
@@ -20,6 +23,7 @@ namespace MarkPredictor.Views
             _assigmentTypes = new List<string>();
             _assigmentTypes.Add("Exam");
             _assigmentTypes.Add("Courese Work");
+            _assessmentController = InstanceFactory.GetAssessmentControllerInstance();
             _selectedAssigmentType = _assigmentTypes[0];
             AssigmentTypes = _assigmentTypes;
             this.DataContext = this;
@@ -27,9 +31,9 @@ namespace MarkPredictor.Views
 
         }
 
-        public AddAssesmentView(int moduleId) : this()
+        public AddAssesmentView(long moduleId) : this()
         {
-            _level = moduleId;
+            _moduleId = moduleId;
         }
 
         public IList<string> AssigmentTypes
@@ -64,13 +68,28 @@ namespace MarkPredictor.Views
         {
             string assigmentName = assigmentNameText.Text;
             double assigmentPrecentage = double.Parse(assigmentPrecentageText.Text);
-            if (assigmentName.Trim() !=  string.Empty && assigmentPrecentage < 0)
+            if (assigmentName.Trim() !=  string.Empty && assigmentPrecentage > 0)
             {
                 AssessmentDto assigmentDto = new AssessmentDto
                 {
                     Name = assigmentName,
-                    Weight = assigmentPrecentage
+                    Weight = assigmentPrecentage,
+                    ModuleId =  _moduleId
                 };
+
+                if (SelectedAssigmentType == "Exam")
+                {
+                    assigmentDto.AssessmentType = Shared.Enum.AssessmentType.EXAM;
+                }
+                else
+                {
+                    assigmentDto.AssessmentType = Shared.Enum.AssessmentType.CourseWork;
+                }
+
+                _assessmentController.AddAssesment(assigmentDto);
+                assigmentNameText.Text = string.Empty;
+                assigmentPrecentageText.Text = "0";
+                SelectedAssigmentType = "Exam";
             }
         }
     }

@@ -1,6 +1,8 @@
 ﻿using MarkPredictor.Common;
 using MarkPredictor.Controllers.Module;
 using MarkPredictor.Dto;
+using MarkPredictor.Shared.MessageBus.Event;
+using Prism.Events;
 using System.Windows;
 
 namespace MarkPredictor.Views
@@ -13,11 +15,13 @@ namespace MarkPredictor.Views
         private long _levelId;
         private long _courseId;
         private IModuleController _moduleController;
+        private readonly IEventAggregator _eventAggregator;
 
         public AddModuleView()
         {
             InitializeComponent();
             _moduleController = InstanceFactory.GetModulControllerInstance();
+            _eventAggregator = InstanceFactory.GetEventAggregatorInstance();
         }
 
         public AddModuleView(long courseId, long levelId) : this()
@@ -38,6 +42,7 @@ namespace MarkPredictor.Views
                 };
                 _moduleController.AddModule(moduleDto);
                 moduleNameText.Text = string.Empty;
+                _eventAggregator.GetEvent<ModuleLoadEvent>().Publish(string.Empty);
             }
         }
     }

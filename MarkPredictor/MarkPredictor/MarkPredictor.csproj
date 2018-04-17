@@ -51,12 +51,28 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Prism, Version=6.3.0.0, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Core.6.3.0\lib\net45\Prism.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Prism.Wpf, Version=6.3.0.0, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Wpf.6.3.0\lib\net45\Prism.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Wpf.6.3.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -77,6 +93,7 @@
     </ApplicationDefinition>
     <Compile Include="Common\InstanceFactory.cs" />
     <Compile Include="Common\AutoMapper.cs" />
+    <Compile Include="Controllers\Assessment\IAssessmentController.cs" />
     <Compile Include="Controllers\Level\ILevelController.cs" />
     <Compile Include="Controllers\Level\LevelController.cs" />
     <Compile Include="Controllers\Module\ModuleController.cs" />
@@ -95,6 +112,10 @@
     <Compile Include="Migrations\201804160347210_AddingCreditFieldForModule.cs" />
     <Compile Include="Migrations\201804160347210_AddingCreditFieldForModule.Designer.cs">
       <DependentUpon>201804160347210_AddingCreditFieldForModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804161503178_AddingModuleIdColumntoAssessment.cs" />
+    <Compile Include="Migrations\201804161503178_AddingModuleIdColumntoAssessment.Designer.cs">
+      <DependentUpon>201804161503178_AddingModuleIdColumntoAssessment.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\AddAssessmentView.xaml.cs">
       <DependentUpon>AddAssessmentView.xaml</DependentUpon>
@@ -128,7 +149,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controllers\AsssessmentController.cs" />
+    <Compile Include="Controllers\Assessment\AsssessmentController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -197,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804160347210_AddingCreditFieldForModule.resx">
       <DependentUpon>201804160347210_AddingCreditFieldForModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804161503178_AddingModuleIdColumntoAssessment.resx">
+      <DependentUpon>201804161503178_AddingModuleIdColumntoAssessment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

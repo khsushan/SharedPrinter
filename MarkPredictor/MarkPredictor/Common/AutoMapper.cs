@@ -20,6 +20,7 @@ namespace MarkPredictor.Common
                 {
                     cfg.CreateMap<Module, ModuleDto>();
                     cfg.CreateMap<Assessment, AssessmentDto>();
+                    cfg.CreateMap<AssessmentDto, Assessment>();
                     cfg.CreateMap<Level, LevelDto>();
                 });
                 _isInitialized = true;

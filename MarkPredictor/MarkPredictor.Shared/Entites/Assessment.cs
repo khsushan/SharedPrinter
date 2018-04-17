@@ -17,6 +17,8 @@ namespace MarkPredictor.Shared.Entites
 
         public int Mark { get; set; }
 
+        public long ModuleId { get; set; }
+
         public Module Module { get; set; }
     }
 }
