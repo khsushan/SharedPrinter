@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MarkPredictor.Views.Level5"
+﻿<UserControl x:Class="MarkPredictor.Views.Levels.LevelView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -23,7 +23,7 @@
             <Button Grid.Column="2" Content="Save" Width="100" Height="25" Margin="2,2,2,2"/>
         </Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="1">
-            <StackPanel Name="level5ContentView" />
+            <StackPanel Name="levelContentView" />
         </ScrollViewer>
     </Grid>
 </UserControl>

@@ -121,21 +121,14 @@
     <Compile Include="Migrations\201804161503178_AddingModuleIdColumntoAssessment.Designer.cs">
       <DependentUpon>201804161503178_AddingModuleIdColumntoAssessment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\AddAssessmentView.xaml.cs">
+    <Compile Include="Views\Assessment\AddAssessmentView.xaml.cs">
       <DependentUpon>AddAssessmentView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AddModuleView.xaml.cs">
+    <Compile Include="Views\Module\AddModuleView.xaml.cs">
       <DependentUpon>AddModuleView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\BaseLevelUserControl.cs" />
-    <Compile Include="Views\Level4.xaml.cs">
-      <DependentUpon>Level4.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Level5.xaml.cs">
-      <DependentUpon>Level5.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Level6.xaml.cs">
-      <DependentUpon>Level6.xaml</DependentUpon>
+    <Compile Include="Views\Levels\LevelView.xaml.cs">
+      <DependentUpon>LevelView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ModuleLevelView.xaml.cs">
       <DependentUpon>ModuleLevelView.xaml</DependentUpon>
@@ -146,7 +139,7 @@
     <Compile Include="Views\TabView.xaml.cs">
       <DependentUpon>TabView.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -156,27 +149,19 @@
     </Compile>
     <Compile Include="Controllers\Assessment\AsssessmentController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\AddAssessmentView.xaml">
+    <Page Include="Views\Assessment\AddAssessmentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\AddModuleView.xaml">
+    <Page Include="Views\Module\AddModuleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Level4.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Level5.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Level6.xaml">
+    <Page Include="Views\Levels\LevelView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -241,9 +226,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Assessment\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="..\MarkPredictor.Shared\MarkPredictor.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

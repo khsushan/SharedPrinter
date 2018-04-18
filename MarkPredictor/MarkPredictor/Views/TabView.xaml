@@ -17,15 +17,9 @@
             <TabItem Header="Module Level">
                 <tabData:ModuleLevelView x:Name="ucTab1Data" />
             </TabItem>
-            <TabItem Header="Level 4">
-                <tabData:Level4 x:Name="level4Tab" />
-            </TabItem>
-            <TabItem Header="Level 5">
-                <tabData:Level5 x:Name="level5Tab" />
-            </TabItem>
-            <TabItem Header="Level 6">
-                <tabData:Level6 x:Name="level6Tab" />
-            </TabItem>
+            <TabItem Header="Level 4" Name="Level4Tab"/>
+            <TabItem Header="Level 5" Name="Level5Tab"/>
+            <TabItem Header="Level 6" Name="Level6Tab"/>
         </TabControl>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>

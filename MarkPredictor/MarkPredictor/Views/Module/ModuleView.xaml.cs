@@ -1,6 +1,7 @@
 ﻿using MarkPredictor.Common;
 using MarkPredictor.Dto;
 using MarkPredictor.MessageBus.Event;
+using MarkPredictor.Views.Assessment;
 using Prism.Events;
 using System.Collections.Generic;
 using System.ComponentModel;

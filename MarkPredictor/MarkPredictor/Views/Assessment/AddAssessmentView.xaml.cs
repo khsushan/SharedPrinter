@@ -6,7 +6,7 @@ using Prism.Events;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace MarkPredictor.Views
+namespace MarkPredictor.Views.Assessment
 {
     /// <summary>
     /// Interaction logic for AddAssigmentView.xaml

@@ -5,7 +5,7 @@ using MarkPredictor.MessageBus.Event;
 using Prism.Events;
 using System.Windows;
 
-namespace MarkPredictor.Views
+namespace MarkPredictor.Views.Module
 {
     /// <summary>
     /// Interaction logic for AddModuleView.xaml

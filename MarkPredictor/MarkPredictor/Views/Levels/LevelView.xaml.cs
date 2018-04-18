@@ -8,28 +8,27 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Controls;
 
-namespace MarkPredictor.Views
+namespace MarkPredictor.Views.Levels
 {
     /// <summary>
     /// Interaction logic for Level4.xaml
     /// </summary>
-    public partial class Level4 : UserControl, INotifyPropertyChanged
+    public partial class LevelView : UserControl, INotifyPropertyChanged
     {
-        private LevelController _levelController;
         private readonly IEventAggregator _eventAggregator;
         private double _levelAverage;
         private LevelDto _levelDto;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Level4()
+        public LevelView(LevelDto levelDto)
         {
             DataContext = this;
             LevelAverage = 0;
             InitializeComponent();
-            _levelController = new LevelController();
-             LoadLevel4Data(1);
-            CalculateLevelAverage(1);
+            _levelDto = levelDto;
+             LoadLevel4Data(_levelDto.Id);
+            CalculateLevelAverage(_levelDto.Id);
             loadModuleViews();
             _eventAggregator = InstanceFactory.GetEventAggregatorInstance();
             _eventAggregator.GetEvent<ModuleLoadEvent>().Subscribe(ModuleAddEvent);
@@ -39,11 +38,10 @@ namespace MarkPredictor.Views
 
         private void LoadLevel4Data(long levelId)
         {
-            if (levelId == 1)
+            if (levelId == _levelDto.Id)
             {
-                _levelDto = _levelController.GetLevelDetails(levelId);
-                level4ContentView.Children.Capacity = _levelDto.Modules.Count;
-                level4ContentView.Children.Clear();
+                levelContentView.Children.Capacity = _levelDto.Modules.Count;
+                levelContentView.Children.Clear();
             }         
         }
 
@@ -65,7 +63,7 @@ namespace MarkPredictor.Views
 
         private void CalculateLevelAverage(long levelId)
         {
-            if (levelId == 1)
+            if (levelId == _levelDto.Id)
             {
                 var average = 0.0;
                 double creditTotal = _levelDto.Modules.Sum(item => item.Credit);
@@ -91,15 +89,15 @@ namespace MarkPredictor.Views
         {
             foreach (var moduleDto in _levelDto.Modules)
             {
-                level4ContentView.Children.Add(new ModuleView(moduleDto));
+                levelContentView.Children.Add(new ModuleView(moduleDto));
             }
         }
 
         public void ModuleAddEvent(ModuleDto moduleDto)
         {
-            if (moduleDto.LevelId ==1)
+            if (moduleDto.LevelId == _levelDto.Id)
             {
-                level4ContentView.Children.Add(new ModuleView(moduleDto));
+                levelContentView.Children.Add(new ModuleView(moduleDto));
                 _levelDto.Modules.Add(moduleDto);
                 CalculateLevelAverage(moduleDto.LevelId);
             }

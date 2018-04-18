@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Windows;
 
-namespace MarkPredictor
+namespace MarkPredictor.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

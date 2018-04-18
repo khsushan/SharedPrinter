@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using MarkPredictor.Views.Module;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace MarkPredictor.Views

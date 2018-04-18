@@ -4,6 +4,7 @@ using MarkPredictor.Controllers.Assessment;
 using MarkPredictor.Controllers.Module;
 using MarkPredictor.Shared;
 using MarkPredictor.Shared.Models;
+using MarkPredictor.Views;
 using Prism.Events;
 using System.Windows;
 
