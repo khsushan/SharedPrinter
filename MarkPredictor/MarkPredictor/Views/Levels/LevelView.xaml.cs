@@ -18,21 +18,23 @@ namespace MarkPredictor.Views.Levels
         private readonly IEventAggregator _eventAggregator;
         private double _levelAverage;
         private LevelDto _levelDto;
-
+        private LevelController _levelController;
         public event PropertyChangedEventHandler PropertyChanged;
 
         public LevelView(LevelDto levelDto)
         {
             DataContext = this;
+            _eventAggregator = InstanceFactory.GetEventAggregatorInstance();
+            _eventAggregator.GetEvent<ModuleLoadEvent>().Subscribe(ModuleAddEvent);
+            _eventAggregator.GetEvent<LevelMarkChangeEvent>().Subscribe(ModuleMarkChangeEvent);
+            _levelController = new LevelController();
             LevelAverage = 0;
             InitializeComponent();
             _levelDto = levelDto;
              LoadLevel4Data(_levelDto.Id);
             CalculateLevelAverage(_levelDto.Id);
             loadModuleViews();
-            _eventAggregator = InstanceFactory.GetEventAggregatorInstance();
-            _eventAggregator.GetEvent<ModuleLoadEvent>().Subscribe(ModuleAddEvent);
-            _eventAggregator.GetEvent<LevelMarkChangeEvent>().Subscribe(ModuleMarkChangeEvent);
+            
 
         }
 
@@ -75,8 +77,11 @@ namespace MarkPredictor.Views.Levels
                     average += module.ModuleAverage * module.Credit / creditTotal;
                 }
 
-                LevelAverage = average;   
+                LevelAverage = average;
+                _levelDto.Average = average;  
             }
+
+            _eventAggregator.GetEvent<SummaryCalculateEvent>().Publish();
         }
 
         private void ModuleMarkChangeEvent(long id)
@@ -104,6 +109,9 @@ namespace MarkPredictor.Views.Levels
             
         }
 
-
+        private void saveButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            _levelController.Save(_levelDto);
+        }
     }
 }

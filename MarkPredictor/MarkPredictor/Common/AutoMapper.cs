@@ -19,9 +19,11 @@ namespace MarkPredictor.Common
                 Mapper.Initialize(cfg =>
                 {
                     cfg.CreateMap<Module, ModuleDto>();
+                    cfg.CreateMap<ModuleDto, Module>();
                     cfg.CreateMap<Assessment, AssessmentDto>();
                     cfg.CreateMap<AssessmentDto, Assessment>();
                     cfg.CreateMap<Level, LevelDto>();
+                    cfg.CreateMap<LevelDto, Level>();
                 });
                 _isInitialized = true;
             }

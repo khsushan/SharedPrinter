@@ -34,6 +34,7 @@ namespace MarkPredictor.Shared.Models
             };
             _markPredictorDbContext.Module.Add(module);
            _markPredictorDbContext.SaveChanges();
+            _markPredictorDbContext.Entry(module).State = System.Data.Entity.EntityState.Detached;
             return module;
         }
     }

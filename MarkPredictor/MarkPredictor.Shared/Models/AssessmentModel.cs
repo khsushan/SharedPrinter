@@ -1,8 +1,5 @@
 ﻿using MarkPredictor.Shared.Entites;
 using MarkPredictor.Shared.Enum;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MarkPredictor.Shared.Models
 {
@@ -31,6 +28,7 @@ namespace MarkPredictor.Shared.Models
         {
             _markPredictorDbContext.Assessment.Add(assessment);
             _markPredictorDbContext.SaveChanges();
+            _markPredictorDbContext.Entry(assessment).State = System.Data.Entity.EntityState.Detached;
             return assessment;
         }
 

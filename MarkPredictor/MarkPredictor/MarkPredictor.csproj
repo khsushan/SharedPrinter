@@ -105,6 +105,7 @@
     <Compile Include="MessageBus\Event\AssessmentLoadEvent.cs" />
     <Compile Include="MessageBus\Event\LevelMarkChangeEvent.cs" />
     <Compile Include="MessageBus\Event\ModuleLoadEvent.cs" />
+    <Compile Include="MessageBus\Event\SummaryCalculateEvent.cs" />
     <Compile Include="Migrations\201804150545045_ChangeingCourseNameDatatypeToString.cs" />
     <Compile Include="Migrations\201804150545045_ChangeingCourseNameDatatypeToString.Designer.cs">
       <DependentUpon>201804150545045_ChangeingCourseNameDatatypeToString.cs</DependentUpon>
@@ -135,6 +136,9 @@
     </Compile>
     <Compile Include="Views\Module\ModuleView.xaml.cs">
       <DependentUpon>ModuleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Summary\SummaryView.xaml.cs">
+      <DependentUpon>SummaryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TabView.xaml.cs">
       <DependentUpon>TabView.xaml</DependentUpon>
@@ -170,6 +174,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Module\ModuleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Summary\SummaryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

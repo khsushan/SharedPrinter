@@ -1,6 +1,7 @@
 ﻿using MarkPredictor.Controllers.Level;
 using MarkPredictor.Dto;
 using MarkPredictor.Views.Levels;
+using MarkPredictor.Views.Summary;
 using System.Windows;
 
 namespace MarkPredictor.Views
@@ -19,11 +20,11 @@ namespace MarkPredictor.Views
         {
             InitializeComponent();
             _levelController = new LevelController();
-            LoadLevelData();
+            LoadTabs();
          
         }
 
-        private void LoadLevelData()
+        private void LoadTabs()
         {
             _level4Dto = _levelController.GetLevelDetails(1);
             Level4Tab.Content = new LevelView(_level4Dto);
@@ -33,6 +34,8 @@ namespace MarkPredictor.Views
 
             _level6Dto = _levelController.GetLevelDetails(3);
             Level6Tab.Content = new LevelView(_level6Dto);
+
+            SummaryViewTab.Content = new SummaryView(_level5Dto, _level6Dto);
 
         }
     }

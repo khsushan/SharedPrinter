@@ -20,7 +20,7 @@
                    Grid.Column="0" VerticalAlignment="Center" />
             <Label  Name="modduleAvarageLable" Content="{Binding LevelAverage}"
                       Grid.Column="1" VerticalAlignment="Center"  Margin="0,0,3,0"/>
-            <Button Grid.Column="2" Content="Save" Width="100" Height="25" Margin="2,2,2,2"/>
+            <Button Grid.Column="2" Content="Save" Name="saveButton" Width="100" Height="25" Margin="2,2,2,2" Click="saveButton_Click"/>
         </Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="1">
             <StackPanel Name="levelContentView" />

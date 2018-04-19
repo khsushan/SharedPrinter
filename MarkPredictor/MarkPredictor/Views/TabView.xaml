@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MarkPredictor.Views"
         mc:Ignorable="d"
         WindowStartupLocation="CenterOwner"
-        xmlns:tabData="clr-namespace:MarkPredictor.Views"
+        xmlns:tabData="clr-namespace:MarkPredictor.Views" 
         Title="" Height="600" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -20,6 +20,7 @@
             <TabItem Header="Level 4" Name="Level4Tab"/>
             <TabItem Header="Level 5" Name="Level5Tab"/>
             <TabItem Header="Level 6" Name="Level6Tab"/>
+            <TabItem Header="Summary" Name="SummaryViewTab"/>
         </TabControl>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
@@ -27,7 +28,6 @@
                 <RowDefinition Height="3*" />
                 <RowDefinition Height="3*" />
             </Grid.RowDefinitions>
-            <Button Content="Summary"  Margin="8,8,8,8" Grid.Row="1"/>
             <Button Content="Exit" Grid.Row="2"  Margin="8,8,8,10"/>
         </Grid>
     </Grid>

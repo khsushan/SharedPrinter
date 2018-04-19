@@ -19,7 +19,23 @@ namespace MarkPredictor.Shared.Models
 
         public Level GetLevel()
         {
-           return  _markPredictorDbContext.Level.Where(l => l.Id == Id).Include(l => l.Modules).Include(x => x.Modules.Select(y => y.Assessments)).FirstOrDefault();
+           return  _markPredictorDbContext.Level.Where(l => l.Id == Id).Include(l => l.Modules).Include(x => x.Modules.Select(y => y.Assessments)).AsNoTracking().FirstOrDefault();
+        }
+
+        public Level SaveLevel(Level level)
+        {
+            _markPredictorDbContext.Entry(level).State = EntityState.Modified;
+            foreach (var module in level.Modules)
+            {
+                _markPredictorDbContext.Entry(module).State = EntityState.Modified;
+                foreach (var assessment in module.Assessments)
+                {
+                    _markPredictorDbContext.Entry(assessment).State = EntityState.Modified;
+                }
+            }
+                
+            _markPredictorDbContext.SaveChanges();
+            return level;
         }
     }
 }
