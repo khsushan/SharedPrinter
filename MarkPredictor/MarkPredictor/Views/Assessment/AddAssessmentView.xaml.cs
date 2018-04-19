@@ -3,8 +3,10 @@ using MarkPredictor.Controllers.Assessment;
 using MarkPredictor.Dto;
 using MarkPredictor.MessageBus.Event;
 using Prism.Events;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Windows;
 
 namespace MarkPredictor.Views.Assessment
 {
@@ -74,27 +76,36 @@ namespace MarkPredictor.Views.Assessment
             double assigmentPrecentage = double.Parse(assigmentPrecentageText.Text);
             if (assigmentName.Trim() !=  string.Empty && assigmentPrecentage > 0)
             {
-                AssessmentDto assigmentDto = new AssessmentDto
+                try
                 {
-                    Name = assigmentName,
-                    Weight = assigmentPrecentage,
-                    ModuleId =  _moduleId
-                };
+                    AssessmentDto assigmentDto = new AssessmentDto
+                    {
+                        Name = assigmentName,
+                        Weight = assigmentPrecentage,
+                        ModuleId = _moduleId
+                    };
 
-                if (SelectedAssigmentType == "Exam")
-                {
-                    assigmentDto.AssessmentType = Shared.Enum.AssessmentType.EXAM;
-                }
-                else
-                {
-                    assigmentDto.AssessmentType = Shared.Enum.AssessmentType.CourseWork;
-                }
+                    if (SelectedAssigmentType == "Exam")
+                    {
+                        assigmentDto.AssessmentType = Shared.Enum.AssessmentType.EXAM;
+                    }
+                    else
+                    {
+                        assigmentDto.AssessmentType = Shared.Enum.AssessmentType.CourseWork;
+                    }
 
-                assigmentDto =  _assessmentController.AddAssesment(assigmentDto);
-                _eventAggregator.GetEvent<AssessmentLoadEvent>().Publish(assigmentDto);
-                assigmentNameText.Text = string.Empty;
-                assigmentPrecentageText.Text = "0";
-                SelectedAssigmentType = "Exam";
+                    assigmentDto = _assessmentController.AddAssesment(assigmentDto);
+                    _eventAggregator.GetEvent<AssessmentLoadEvent>().Publish(assigmentDto);
+                    assigmentNameText.Text = string.Empty;
+                    assigmentPrecentageText.Text = "0";
+                    SelectedAssigmentType = "Exam";
+                    MessageBox.Show("Assessment saved successfully");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+               
             }
         }
     }

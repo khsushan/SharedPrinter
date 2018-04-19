@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterOwner"
         xmlns:tabData="clr-namespace:MarkPredictor.Views" 
+        Closing="Window_Closing"
         Title="" Height="600" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -26,9 +27,8 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="22*" />
                 <RowDefinition Height="3*" />
-                <RowDefinition Height="3*" />
             </Grid.RowDefinitions>
-            <Button Content="Exit" Grid.Row="2"  Margin="8,8,8,10"/>
+            <Button Content="Exit" Name="exitButton" Grid.Row="2" Height="25"  Margin="8,8,8,10" Click="exitButton_Click"/>
         </Grid>
     </Grid>
 </Window>

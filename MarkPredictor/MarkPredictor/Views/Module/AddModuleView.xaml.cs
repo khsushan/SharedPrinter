@@ -3,6 +3,7 @@ using MarkPredictor.Controllers.Module;
 using MarkPredictor.Dto;
 using MarkPredictor.MessageBus.Event;
 using Prism.Events;
+using System;
 using System.Windows;
 
 namespace MarkPredictor.Views.Module
@@ -35,16 +36,26 @@ namespace MarkPredictor.Views.Module
             var credit = double.Parse(moduleCreditText.Text);
             if (moduleNameText.Text.Trim() != string.Empty && credit > 0)
             {
-                ModuleDto moduleDto = new ModuleDto
+                try
                 {
-                    ModuleName = moduleNameText.Text,
-                    CourseId = _courseId,
-                    LevelId = _levelId,
-                    Credit = credit
-                };
-                moduleDto = _moduleController.AddModule(moduleDto);
-                moduleNameText.Text = string.Empty;
-                _eventAggregator.GetEvent<ModuleLoadEvent>().Publish(moduleDto);
+                    ModuleDto moduleDto = new ModuleDto
+                    {
+                        ModuleName = moduleNameText.Text,
+                        CourseId = _courseId,
+                        LevelId = _levelId,
+                        Credit = credit
+                    };
+                    moduleDto = _moduleController.AddModule(moduleDto);
+                    moduleNameText.Text = string.Empty;
+                    moduleCreditText.Text = "0";
+                    _eventAggregator.GetEvent<ModuleLoadEvent>().Publish(moduleDto);
+                    MessageBox.Show("Module details saved successfully");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+               
             }
         }
     }

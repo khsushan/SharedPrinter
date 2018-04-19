@@ -34,6 +34,7 @@ namespace MarkPredictor.Views.Module
             eventAggregator.GetEvent<AssessmentLoadEvent>().Subscribe(ReloadAssessment);
             assessmentList.CellEditEnding += assementList_CellEditEnding;
             ModuleAverage = _moduleDto.ModuleAverage;
+            modduleCreditLabel.Content = moduleDto.Credit;
 
         }
 

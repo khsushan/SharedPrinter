@@ -1,7 +1,10 @@
-﻿using MarkPredictor.Controllers.Level;
+﻿using MarkPredictor.Common;
+using MarkPredictor.Controllers.Level;
 using MarkPredictor.Dto;
+using MarkPredictor.MessageBus.Event;
 using MarkPredictor.Views.Levels;
 using MarkPredictor.Views.Summary;
+using Prism.Events;
 using System.Windows;
 
 namespace MarkPredictor.Views
@@ -15,13 +18,15 @@ namespace MarkPredictor.Views
         private LevelDto _level4Dto;
         private LevelDto _level5Dto;
         private LevelDto _level6Dto;
+        private readonly IEventAggregator _eventAggregator;
 
         public TabView()
         {
             InitializeComponent();
             _levelController = new LevelController();
             LoadTabs();
-         
+            _eventAggregator = InstanceFactory.GetEventAggregatorInstance();
+
         }
 
         private void LoadTabs()
@@ -37,6 +42,27 @@ namespace MarkPredictor.Views
 
             SummaryViewTab.Content = new SummaryView(_level5Dto, _level6Dto);
 
+        }
+
+        private void exitButton_Click(object sender, RoutedEventArgs e)
+        {
+            HandleSave();
+            Application.Current.Windows[0].Close();
+        }
+
+        private void HandleSave()
+        {
+            MessageBoxResult result = MessageBox.Show("Do you need to save the changes before exit", "Mark Predictor", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                _eventAggregator.GetEvent<SaveEvent>().Publish();
+
+            }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            HandleSave();
         }
     }
 }

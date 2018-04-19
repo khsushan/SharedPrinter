@@ -105,6 +105,7 @@
     <Compile Include="MessageBus\Event\AssessmentLoadEvent.cs" />
     <Compile Include="MessageBus\Event\LevelMarkChangeEvent.cs" />
     <Compile Include="MessageBus\Event\ModuleLoadEvent.cs" />
+    <Compile Include="MessageBus\Event\SaveEvent.cs" />
     <Compile Include="MessageBus\Event\SummaryCalculateEvent.cs" />
     <Compile Include="Migrations\201804150545045_ChangeingCourseNameDatatypeToString.cs" />
     <Compile Include="Migrations\201804150545045_ChangeingCourseNameDatatypeToString.Designer.cs">
