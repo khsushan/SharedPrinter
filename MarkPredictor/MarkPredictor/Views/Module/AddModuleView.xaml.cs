@@ -58,5 +58,13 @@ namespace MarkPredictor.Views.Module
                
             }
         }
+
+        private void moduleCreditText_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            int key = (int)e.Key;
+
+            e.Handled = !(key >= 34 && key <= 43 ||
+                key >= 74 && key <= 83 || key == 2);
+        }
     }
 }

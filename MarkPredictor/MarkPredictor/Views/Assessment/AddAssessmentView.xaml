@@ -42,15 +42,13 @@
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
             <Label Content="Weight :" Grid.Column="0" VerticalAlignment="Center" />
-            <TextBox  Name="assigmentPrecentageText" Grid.Column="1" VerticalAlignment="Center"  Margin="0,0,3,0"/>
+            <TextBox  Name="assigmentPrecentageText" 
+                      Grid.Column="1" VerticalAlignment="Center" 
+                      KeyDown="assigmentPrecentageText_KeyDown"
+                      Margin="0,0,3,0"/>
         </Grid>
         <Grid Grid.Row="3" HorizontalAlignment="Right">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*" />
-                <ColumnDefinition Width="3*" />
-            </Grid.ColumnDefinitions>
-            <Button Content="Ok" Name="okBtn" Width="100" Height="25" Margin="2,0,2,0" Grid.Column="0" Click="okBtn_Click" />
-            <Button Content="Clear" Name="clearBtn"  Width="100" Height="25"  Margin="2,0,2,0" Grid.Column="1" />
+            <Button Content="Ok" Name="okBtn" Width="100" Height="25" Margin="2,0,2,0" Click="okBtn_Click" />
         </Grid>
     </Grid>
 </Window>

@@ -5,6 +5,7 @@ using MarkPredictor.Views.Assessment;
 using Prism.Events;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -40,7 +41,7 @@ namespace MarkPredictor.Views.Module
 
         private void addAssementBtn_Click(object sender, RoutedEventArgs e)
         {
-            AddAssesmentView addAssesmentView = new AddAssesmentView(_moduleDto.Id);
+            AddAssesmentView addAssesmentView = new AddAssesmentView(_moduleDto.Id, CalculateSumOfCurrentAssigmentWeight());
             addAssesmentView.ShowDialog();
         }
 
@@ -95,8 +96,18 @@ namespace MarkPredictor.Views.Module
                         var el = e.EditingElement as TextBox;
                         try
                         {
-                            _moduleDto.Assessments[rowIndex].Mark = double.Parse(el.Text);
-                            CalculateModuleAverage();
+                            double mark = double.Parse(el.Text);
+                            if ( mark <= 100)
+                            {
+                                _moduleDto.Assessments[rowIndex].Mark = mark;
+                                CalculateModuleAverage();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Sorry mark cannot be greater than 100");
+                                el.Text = "0";
+                            }
+                           
                         }
                         catch (System.FormatException)
                         {
@@ -112,6 +123,11 @@ namespace MarkPredictor.Views.Module
             ModuleAverage = AverageCalculator.CalculateModuleAverage(_moduleDto);
             _moduleDto.ModuleAverage = _moduleAverage;
             eventAggregator.GetEvent<LevelMarkChangeEvent>().Publish(_moduleDto.LevelId);
+        }
+
+        private double CalculateSumOfCurrentAssigmentWeight()
+        {
+            return _moduleDto.Assessments.Sum(a => a.Weight);
         }
 
     }

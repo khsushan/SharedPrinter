@@ -21,6 +21,7 @@ namespace MarkPredictor.Views.Assessment
         public event PropertyChangedEventHandler PropertyChanged;
         private IAssessmentController _assessmentController;
         private readonly IEventAggregator _eventAggregator;
+        private double _sumofCurrentAssessmentWeight;
 
 
         public AddAssesmentView()
@@ -37,9 +38,10 @@ namespace MarkPredictor.Views.Assessment
 
         }
 
-        public AddAssesmentView(long moduleId) : this()
+        public AddAssesmentView(long moduleId, double sumofCurrentAssessmentWeight) : this()
         {
             _moduleId = moduleId;
+            _sumofCurrentAssessmentWeight = sumofCurrentAssessmentWeight;
         }
 
         public IList<string> AssigmentTypes
@@ -74,7 +76,12 @@ namespace MarkPredictor.Views.Assessment
         {
             string assigmentName = assigmentNameText.Text;
             double assigmentPrecentage = double.Parse(assigmentPrecentageText.Text);
-            if (assigmentName.Trim() !=  string.Empty && assigmentPrecentage > 0)
+
+            if ((assigmentPrecentage + _sumofCurrentAssessmentWeight) > 100)
+            {
+                MessageBox.Show("Sorry sum of the assessment weight in module cannot be greater than 100");
+            }
+            else if (assigmentName.Trim() !=  string.Empty && assigmentPrecentage > 0)
             {
                 try
                 {
@@ -107,6 +114,18 @@ namespace MarkPredictor.Views.Assessment
                 }
                
             }
+            else
+            {
+                MessageBox.Show("Please provide valid inputs");
+            }
+        }
+
+        private void assigmentPrecentageText_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            int key = (int)e.Key;
+
+            e.Handled = !(key >= 34 && key <= 43 ||
+                key >= 74 && key <= 83 || key == 2);
         }
     }
 }
