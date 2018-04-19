@@ -19,6 +19,10 @@ namespace MarkPredictor.Views
         private LevelDto _level5Dto;
         private LevelDto _level6Dto;
         private readonly IEventAggregator _eventAggregator;
+        private LevelView _level4View;
+        private LevelView _level5View;
+        private LevelView _level6View;
+
 
         public TabView()
         {
@@ -34,13 +38,16 @@ namespace MarkPredictor.Views
         private void LoadTabs()
         {
             _level4Dto = _levelController.GetLevelDetails(1);
-            Level4Tab.Content = new LevelView(_level4Dto);
+            _level4View = new LevelView(_level4Dto);
+            Level4Tab.Content = _level4View;
 
             _level5Dto = _levelController.GetLevelDetails(2);
-            Level5Tab.Content = new LevelView(_level5Dto);
+            _level5View = new LevelView(_level5Dto);
+            Level5Tab.Content = _level5View;
 
             _level6Dto = _levelController.GetLevelDetails(3);
-            Level6Tab.Content = new LevelView(_level6Dto);
+            _level6View = new LevelView(_level6Dto);
+            Level6Tab.Content = _level6View;
 
             SummaryViewTab.Content = new SummaryView(_level5Dto, _level6Dto);
 
@@ -48,16 +55,18 @@ namespace MarkPredictor.Views
 
         private void exitButton_Click(object sender, RoutedEventArgs e)
         {
-            HandleSave();
+
             Application.Current.Windows[0].Close();
         }
 
-        private void HandleSave()
+        private async void HandleSave()
         {
             MessageBoxResult result = MessageBox.Show("Do you need to save the changes before exit", "Mark Predictor", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                _eventAggregator.GetEvent<SaveEvent>().Publish();
+                await _level4View.SaveLevelDetails();
+                await _level5View.SaveLevelDetails();
+                await _level6View.SaveLevelDetails();
 
             }
         }

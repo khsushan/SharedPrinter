@@ -7,6 +7,7 @@ using Prism.Events;
 using System;
 using System.ComponentModel;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -29,7 +30,7 @@ namespace MarkPredictor.Views.Levels
             _eventAggregator = InstanceFactory.GetEventAggregatorInstance();
             _eventAggregator.GetEvent<ModuleLoadEvent>().Subscribe(ModuleAddEvent);
             _eventAggregator.GetEvent<LevelMarkChangeEvent>().Subscribe(ModuleMarkChangeEvent);
-            _eventAggregator.GetEvent<SaveEvent>().Subscribe(SaveLevelDetails);
+            //_eventAggregator.GetEvent<SaveEvent>().Subscribe(SaveLevelDetails);
             _levelController = new LevelController();
             LevelAverage = 0;
             InitializeComponent();
@@ -113,25 +114,24 @@ namespace MarkPredictor.Views.Levels
             
         }
 
-        private void saveButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        private async void saveButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             try
             {
-                SaveLevelDetails();
+                await SaveLevelDetails();
                 MessageBox.Show("Level details sucessfully saved");
             }
             catch (Exception ex)
             {
-                SaveLevelDetails();
                 MessageBox.Show(ex.Message);
             }
-           
+
         }
 
-        private void SaveLevelDetails()
+        public async Task SaveLevelDetails()
         {
-            _levelController.Save(_levelDto);
-           
+            await _levelController.Save(_levelDto);
+
         }
     }
 }
