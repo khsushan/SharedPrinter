@@ -27,7 +27,7 @@ namespace MarkPredictor.Views.Module
         public ModuleView(ModuleDto moduleDto)
         {
             DataContext = this;
-            InitializeComponent();           
+            InitializeComponent();
             _moduleDto = moduleDto;
             moduleNameLable.Content = moduleDto.ModuleName;
             AssessmentList = _moduleDto.Assessments;

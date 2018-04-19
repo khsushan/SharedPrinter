@@ -21,7 +21,7 @@
             <TabItem Header="Level 4" Name="Level4Tab"/>
             <TabItem Header="Level 5" Name="Level5Tab"/>
             <TabItem Header="Level 6" Name="Level6Tab"/>
-            <TabItem Header="Summary" Name="SummaryViewTab"/>
+            <TabItem Header="Summary" Name="SummaryViewTab" Loaded="SummaryViewTab_Loaded"/>
         </TabControl>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>

@@ -22,10 +22,12 @@ namespace MarkPredictor.Views
 
         public TabView()
         {
+            _eventAggregator = InstanceFactory.GetEventAggregatorInstance();
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             _levelController = new LevelController();
             LoadTabs();
-            _eventAggregator = InstanceFactory.GetEventAggregatorInstance();
+            
 
         }
 
@@ -63,6 +65,11 @@ namespace MarkPredictor.Views
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             HandleSave();
+        }
+
+        private void SummaryViewTab_Loaded(object sender, RoutedEventArgs e)
+        {
+            _eventAggregator.GetEvent<SummaryCalculateEvent>().Publish();
         }
     }
 }

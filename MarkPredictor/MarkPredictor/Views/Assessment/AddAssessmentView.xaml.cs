@@ -35,7 +35,7 @@ namespace MarkPredictor.Views.Assessment
             AssigmentTypes = _assigmentTypes;
             this.DataContext = this;
             InitializeComponent();
-
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
         public AddAssesmentView(long moduleId, double sumofCurrentAssessmentWeight) : this()

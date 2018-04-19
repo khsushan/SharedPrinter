@@ -21,6 +21,7 @@ namespace MarkPredictor.Views.Module
         public AddModuleView()
         {
             InitializeComponent();
+             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             _moduleController = InstanceFactory.GetModulControllerInstance();
             _eventAggregator = InstanceFactory.GetEventAggregatorInstance();
         }

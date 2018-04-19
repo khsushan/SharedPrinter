@@ -14,6 +14,7 @@ namespace MarkPredictor.Views
         public MainWindow()
         {
             InitializeComponent();;
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             window = new TabView();
         }
 
@@ -34,6 +35,11 @@ namespace MarkPredictor.Views
         {
             this.window.Show();
             this.Close();
+        }
+
+        private void exitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Windows[0].Close();
         }
     }
 }

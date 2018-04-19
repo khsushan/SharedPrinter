@@ -39,11 +39,12 @@ namespace MarkPredictor.Views.Summary
         public SummaryView(LevelDto level5Dto, LevelDto level6Dto)
         {
             DataContext = this;
-            _level5Dto = level5Dto;
-            _level6Dto = level6Dto;
-            InitializeComponent();
             _eventAggregator = InstanceFactory.GetEventAggregatorInstance();
             _eventAggregator.GetEvent<SummaryCalculateEvent>().Subscribe(CalculateCourseOutcome);
+            _level5Dto = level5Dto;
+            _level6Dto = level6Dto;
+            InitializeComponent();          
+            
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

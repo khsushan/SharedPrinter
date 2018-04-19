@@ -22,7 +22,7 @@ namespace MarkPredictor.Shared.Models
            return  _markPredictorDbContext.Level.Where(l => l.Id == Id).Include(l => l.Modules).Include(x => x.Modules.Select(y => y.Assessments)).AsNoTracking().FirstOrDefault();
         }
 
-        public Level SaveLevel(Level level)
+        public async System.Threading.Tasks.Task<Level> SaveLevel(Level level)
         {
             _markPredictorDbContext.Entry(level).State = EntityState.Modified;
             foreach (var module in level.Modules)
@@ -33,8 +33,8 @@ namespace MarkPredictor.Shared.Models
                     _markPredictorDbContext.Entry(assessment).State = EntityState.Modified;
                 }
             }
-                
-            _markPredictorDbContext.SaveChanges();
+
+            await _markPredictorDbContext.SaveChangesAsync();
             return level;
         }
     }

@@ -15,10 +15,10 @@ namespace MarkPredictor.Controllers.Level
             return Mapper.Map<LevelDto>(levelModule.GetLevel());
         }
 
-        public LevelDto Save(LevelDto levelDto)
+        public async System.Threading.Tasks.Task<LevelDto> Save(LevelDto levelDto)
         {
             var levelModule = InstanceFactory.GetLevelModelInstance();
-            var level = levelModule.SaveLevel(Mapper.Map<Shared.Entites.Level>(levelDto));
+            var level = await levelModule.SaveLevel(Mapper.Map<Shared.Entites.Level>(levelDto));
             return Mapper.Map<LevelDto>(level);
         }
     }

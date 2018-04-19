@@ -6,6 +6,6 @@ namespace MarkPredictor.Controllers.Level
     {
         LevelDto GetLevelDetails(long levelId);
 
-        LevelDto Save(LevelDto levelDto);
+        System.Threading.Tasks.Task<LevelDto> Save(LevelDto levelDto);
     }
 }
