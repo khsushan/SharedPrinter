@@ -71,7 +71,7 @@ namespace MarkPredictor.Views.Summary
         private void CalculateCourseOutcome()
         {
             double overallAvg = _level5Dto.Average * 1 / 3 + _level6Dto.Average * 2 / 3;
-            Average = overallAvg;
+            Average = Double.Parse(overallAvg.ToString("n2"));
             GradeCalculation(overallAvg);
         }
 

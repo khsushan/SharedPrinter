@@ -17,7 +17,7 @@ namespace MarkPredictor.Common
                 average += assessment.Mark * (assessment.Weight / 100.0);
             }
 
-           return average;
+           return Double.Parse(average.ToString("n2"));
         }
     }
 }

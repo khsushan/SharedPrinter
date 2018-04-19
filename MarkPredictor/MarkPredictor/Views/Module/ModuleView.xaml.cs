@@ -110,6 +110,7 @@ namespace MarkPredictor.Views.Module
         private void CalculateModuleAverage()
         {
             ModuleAverage = AverageCalculator.CalculateModuleAverage(_moduleDto);
+            _moduleDto.ModuleAverage = _moduleAverage;
             eventAggregator.GetEvent<LevelMarkChangeEvent>().Publish(_moduleDto.LevelId);
         }
 

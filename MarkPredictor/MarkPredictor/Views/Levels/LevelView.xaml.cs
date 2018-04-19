@@ -80,11 +80,12 @@ namespace MarkPredictor.Views.Levels
                     average += module.ModuleAverage * module.Credit / creditTotal;
                 }
 
-                LevelAverage = average;
-                _levelDto.Average = average;  
+                LevelAverage = Double.Parse(average.ToString("n2"));
+                _levelDto.Average = Double.Parse(average.ToString("n2"));
+                _eventAggregator.GetEvent<SummaryCalculateEvent>().Publish();
             }
 
-            _eventAggregator.GetEvent<SummaryCalculateEvent>().Publish();
+            
         }
 
         private void ModuleMarkChangeEvent(long id)
