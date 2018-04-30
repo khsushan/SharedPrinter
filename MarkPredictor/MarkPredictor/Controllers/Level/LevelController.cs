@@ -15,9 +15,9 @@ namespace MarkPredictor.Controllers.Level
         }
 
 
-        public async Task<LevelDto> GetLevelDetails(long levelId)
+        public async Task<LevelDto> GetLevelDetails(long levelId, long courseId)
         {
-            var level = await httpClient.GetLevel(levelId);
+            var level = await httpClient.GetLevel(levelId, courseId);
             return level;
         }
 

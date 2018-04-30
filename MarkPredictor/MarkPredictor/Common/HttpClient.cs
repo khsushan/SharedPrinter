@@ -50,13 +50,22 @@ namespace MarkPredictor.Common
             return Newtonsoft.Json.JsonConvert.DeserializeObject<ModuleDto>(response.Content);
         }
 
-        public async Task<LevelDto> GetLevel(long levelId)
+        public async Task<LevelDto> GetLevel(long levelId, long courseId)
         {
             var request = new RestRequest(Method.GET);
-            request.Resource = $"levels/{levelId}";
+            request.Resource = $"levels/{levelId}/course/{courseId}";
             request.RequestFormat = DataFormat.Json;
             var response = await restClient.ExecuteTaskAsync(request);
             return Newtonsoft.Json.JsonConvert.DeserializeObject<LevelDto>(response.Content);
+        }
+
+        public async Task<StudentDto> Login(StudentDto studentDto)
+        {
+            var request = new RestRequest(Method.GET);
+            request.Resource = $"accounts/login";
+            request.RequestFormat = DataFormat.Json;
+            var response = await restClient.ExecuteTaskAsync(request);
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<StudentDto>(response.Content);
         }
     }
 }
