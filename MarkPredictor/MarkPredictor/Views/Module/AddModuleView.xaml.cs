@@ -32,7 +32,7 @@ namespace MarkPredictor.Views.Module
             _levelId = levelId;
         }
 
-        private void okBtn_Click(object sender, RoutedEventArgs e)
+        private async void okBtn_Click(object sender, RoutedEventArgs e)
         {
             var credit = double.Parse(moduleCreditText.Text);
             if (moduleNameText.Text.Trim() != string.Empty && credit > 0)
@@ -46,7 +46,7 @@ namespace MarkPredictor.Views.Module
                         LevelId = _levelId,
                         Credit = credit
                     };
-                    moduleDto = _moduleController.AddModule(moduleDto);
+                    moduleDto = await _moduleController.AddModule(moduleDto);
                     moduleNameText.Text = string.Empty;
                     moduleCreditText.Text = "0";
                     _eventAggregator.GetEvent<ModuleLoadEvent>().Publish(moduleDto);
@@ -56,7 +56,7 @@ namespace MarkPredictor.Views.Module
                 {
                     MessageBox.Show(ex.Message);
                 }
-               
+
             }
         }
 

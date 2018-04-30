@@ -45,5 +45,10 @@ namespace MarkPredictor.Common
         {
             return Container.Resolve<IEventAggregator>();
         }
+
+        public static HttpClient GetHttpClientInstance()
+        {
+            return Container.Resolve<HttpClient>();
+        }
     }
 }

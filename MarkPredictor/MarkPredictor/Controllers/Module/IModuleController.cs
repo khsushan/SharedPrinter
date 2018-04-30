@@ -9,6 +9,6 @@ namespace MarkPredictor.Controllers.Module
 {
     public interface IModuleController
     {
-        ModuleDto AddModule(ModuleDto moduleDto);
+        Task<ModuleDto> AddModule(ModuleDto moduleDto);
     }
 }

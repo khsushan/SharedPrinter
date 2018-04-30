@@ -1,11 +1,12 @@
 ﻿using MarkPredictor.Dto;
+using System.Threading.Tasks;
 
 namespace MarkPredictor.Controllers.Level
 {
     public interface ILevelController
     {
-        LevelDto GetLevelDetails(long levelId);
+        Task<LevelDto> GetLevelDetails(long levelId);
 
-        System.Threading.Tasks.Task<LevelDto> Save(LevelDto levelDto);
+        Task<LevelDto> Save(LevelDto levelDto);
     }
 }

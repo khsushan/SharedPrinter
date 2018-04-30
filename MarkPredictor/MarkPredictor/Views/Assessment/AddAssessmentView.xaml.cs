@@ -72,7 +72,7 @@ namespace MarkPredictor.Views.Assessment
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private void okBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+        private async void okBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             string assigmentName = assigmentNameText.Text;
             double assigmentPrecentage = double.Parse(assigmentPrecentageText.Text);
@@ -81,7 +81,7 @@ namespace MarkPredictor.Views.Assessment
             {
                 MessageBox.Show("Sorry sum of the assessment weight in module cannot be greater than 100");
             }
-            else if (assigmentName.Trim() !=  string.Empty && assigmentPrecentage > 0)
+            else if (assigmentName.Trim() != string.Empty && assigmentPrecentage > 0)
             {
                 try
                 {
@@ -101,7 +101,7 @@ namespace MarkPredictor.Views.Assessment
                         assigmentDto.AssessmentType = Shared.Enum.AssessmentType.CourseWork;
                     }
 
-                    assigmentDto = _assessmentController.AddAssesment(assigmentDto);
+                    assigmentDto = await _assessmentController.AddAssesment(assigmentDto);
                     _eventAggregator.GetEvent<AssessmentLoadEvent>().Publish(assigmentDto);
                     assigmentNameText.Text = string.Empty;
                     assigmentPrecentageText.Text = "0";
@@ -112,7 +112,7 @@ namespace MarkPredictor.Views.Assessment
                 {
                     MessageBox.Show(ex.Message);
                 }
-               
+
             }
             else
             {

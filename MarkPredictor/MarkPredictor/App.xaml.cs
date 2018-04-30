@@ -34,6 +34,7 @@ namespace MarkPredictor
             builder.RegisterType<ModuleController>().As<IModuleController>().InstancePerLifetimeScope();
             builder.RegisterType<AsssessmentController>().As<IAssessmentController>().InstancePerLifetimeScope();
             builder.RegisterType<EventAggregator>().As<IEventAggregator>().InstancePerLifetimeScope();
+            builder.RegisterType<HttpClient>();
             InstanceFactory.Container = builder.Build();
         }   
     }

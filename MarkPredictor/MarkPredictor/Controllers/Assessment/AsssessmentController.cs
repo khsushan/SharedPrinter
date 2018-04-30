@@ -12,12 +12,16 @@ namespace MarkPredictor.Controllers.Assessment
 {
     public class AsssessmentController : IAssessmentController
     {
+        private readonly HttpClient httpClient;
 
-        public AssessmentDto AddAssesment(AssessmentDto assigmentDto)
+        public AsssessmentController()
         {
-            var assessmentModel = InstanceFactory.GetAssessmentModelInstance();
-            var assessment = assessmentModel.AddAssessment(Mapper.Map<Shared.Entites.Assessment>(assigmentDto));
-            return Mapper.Map<AssessmentDto>(assessment);
+            httpClient = InstanceFactory.GetHttpClientInstance();
+        }
+
+        public async Task<AssessmentDto> AddAssesment(AssessmentDto assigmentDto)
+        {
+            return await httpClient.AddAssessment(assigmentDto);
         }
     }
 }

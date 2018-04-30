@@ -5,6 +5,8 @@ using MarkPredictor.MessageBus.Event;
 using MarkPredictor.Views.Levels;
 using MarkPredictor.Views.Summary;
 using Prism.Events;
+using System;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace MarkPredictor.Views
@@ -30,22 +32,22 @@ namespace MarkPredictor.Views
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             _levelController = new LevelController();
-            LoadTabs();
-            
+            Application.Current.Dispatcher.Invoke(new Action(async () => { await LoadTabs(); }));
+
 
         }
 
-        private void LoadTabs()
+        private async Task LoadTabs()
         {
-            _level4Dto = _levelController.GetLevelDetails(1);
+            _level4Dto = await _levelController.GetLevelDetails(1);
             _level4View = new LevelView(_level4Dto);
             Level4Tab.Content = _level4View;
 
-            _level5Dto = _levelController.GetLevelDetails(2);
+            _level5Dto = await _levelController.GetLevelDetails(2);
             _level5View = new LevelView(_level5Dto);
             Level5Tab.Content = _level5View;
 
-            _level6Dto = _levelController.GetLevelDetails(3);
+            _level6Dto = await _levelController.GetLevelDetails(3);
             _level6View = new LevelView(_level6Dto);
             Level6Tab.Content = _level6View;
 

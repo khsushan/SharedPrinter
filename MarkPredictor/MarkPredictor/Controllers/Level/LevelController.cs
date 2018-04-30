@@ -1,25 +1,30 @@
 ﻿using MarkPredictor.Dto;
 using MarkPredictor.Common;
 using AutoMapper;
+using System.Threading.Tasks;
 
 namespace MarkPredictor.Controllers.Level
 {
     public class LevelController : ILevelController
     {
+        private readonly HttpClient httpClient;
 
-
-        public LevelDto GetLevelDetails(long levelId)
+        public LevelController()
         {
-            var levelModule = InstanceFactory.GetLevelModelInstance();
-            levelModule.Id = levelId;
-            return Mapper.Map<LevelDto>(levelModule.GetLevel());
+            httpClient = InstanceFactory.GetHttpClientInstance();
         }
 
-        public async System.Threading.Tasks.Task<LevelDto> Save(LevelDto levelDto)
+
+        public async Task<LevelDto> GetLevelDetails(long levelId)
         {
-            var levelModule = InstanceFactory.GetLevelModelInstance();
-            var level = await levelModule.SaveLevel(Mapper.Map<Shared.Entites.Level>(levelDto));
-            return Mapper.Map<LevelDto>(level);
+            var level = await httpClient.GetLevel(levelId);
+            return level;
+        }
+
+        public async Task<LevelDto> Save(LevelDto levelDto)
+        {
+            var level = await httpClient.UpdateLevel(levelDto);
+            return level;
         }
     }
 }

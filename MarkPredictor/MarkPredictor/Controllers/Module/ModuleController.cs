@@ -1,25 +1,23 @@
 ﻿using AutoMapper;
+using MarkPredictor.Common;
 using MarkPredictor.Dto;
 using MarkPredictor.Shared.Models;
+using System.Threading.Tasks;
 
 namespace MarkPredictor.Controllers.Module
 {
     public class ModuleController : IModuleController
     {
-        private ModuleModel _moduleModel;
+        private readonly HttpClient httpClient;
 
-        public ModuleController(ModuleModel moduleModel)
+        public ModuleController()
         {
-            _moduleModel = moduleModel;
+            httpClient = InstanceFactory.GetHttpClientInstance();
         }
 
-        public ModuleDto AddModule(ModuleDto moduleDto)
+        public async Task<ModuleDto> AddModule(ModuleDto moduleDto)
         {
-            _moduleModel.ModuleName = moduleDto.ModuleName;
-            _moduleModel.CourseId = moduleDto.CourseId;
-            _moduleModel.LevelId = moduleDto.LevelId;
-            _moduleModel.Credit = moduleDto.Credit;
-            return Mapper.Map<ModuleDto>(_moduleModel.Save());
+            return await httpClient.AddModule(moduleDto);
         }
     }
 }
