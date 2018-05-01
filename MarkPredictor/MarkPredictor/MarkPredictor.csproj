@@ -104,6 +104,8 @@
     <Compile Include="Common\HttpClient.cs" />
     <Compile Include="Common\InstanceFactory.cs" />
     <Compile Include="Common\AutoMapper.cs" />
+    <Compile Include="Controllers\Account\AccountController.cs" />
+    <Compile Include="Controllers\Account\IAccountController.cs" />
     <Compile Include="Controllers\Assessment\IAssessmentController.cs" />
     <Compile Include="Controllers\Level\ILevelController.cs" />
     <Compile Include="Controllers\Level\LevelController.cs" />
@@ -112,6 +114,7 @@
     <Compile Include="Dto\AssessmentDto.cs" />
     <Compile Include="Dto\LevelDto.cs" />
     <Compile Include="Dto\ModuleDto.cs" />
+    <Compile Include="Dto\StudentDto.cs" />
     <Compile Include="MessageBus\Event\AssessmentLoadEvent.cs" />
     <Compile Include="MessageBus\Event\LevelMarkChangeEvent.cs" />
     <Compile Include="MessageBus\Event\ModuleLoadEvent.cs" />
@@ -136,6 +139,9 @@
     <Compile Include="Views\Assessment\AddAssessmentView.xaml.cs">
       <DependentUpon>AddAssessmentView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Login\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Module\AddModuleView.xaml.cs">
       <DependentUpon>AddModuleView.xaml</DependentUpon>
     </Compile>
@@ -154,6 +160,10 @@
     <Compile Include="Views\TabView.xaml.cs">
       <DependentUpon>TabView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\Login\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

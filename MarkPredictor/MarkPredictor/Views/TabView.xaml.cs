@@ -24,30 +24,36 @@ namespace MarkPredictor.Views
         private LevelView _level4View;
         private LevelView _level5View;
         private LevelView _level6View;
+        private long _courseId;
 
 
-        public TabView()
+        public TabView(long courseId)
         {
             _eventAggregator = InstanceFactory.GetEventAggregatorInstance();
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             _levelController = new LevelController();
+            _courseId = courseId;
             Application.Current.Dispatcher.Invoke(new Action(async () => { await LoadTabs(); }));
-
-
+            _eventAggregator.GetEvent<SummaryCalculateEvent>().Publish();
         }
 
         private async Task LoadTabs()
         {
-            _level4Dto = await _levelController.GetLevelDetails(1,1);
+            ModuleLevelTab.Content = new ModuleLevelView(_courseId);
+
+            _level4Dto = await _levelController.GetLevelDetails(1,_courseId);
+            _level4Dto = _level4Dto == null ? new LevelDto() : _level4Dto;
             _level4View = new LevelView(_level4Dto);
             Level4Tab.Content = _level4View;
 
-            _level5Dto = await _levelController.GetLevelDetails(2,1);
+            _level5Dto = await _levelController.GetLevelDetails(2,_courseId);
+            _level5Dto = _level5Dto == null ? new LevelDto() : _level5Dto;
             _level5View = new LevelView(_level5Dto);
             Level5Tab.Content = _level5View;
 
-            _level6Dto = await _levelController.GetLevelDetails(3,1);
+            _level6Dto = await _levelController.GetLevelDetails(3,_courseId);
+            _level6Dto = _level6Dto == null ? new LevelDto() : _level6Dto;
             _level6View = new LevelView(_level6Dto);
             Level6Tab.Content = _level6View;
 

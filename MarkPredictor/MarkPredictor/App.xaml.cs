@@ -5,6 +5,7 @@ using MarkPredictor.Controllers.Module;
 using MarkPredictor.Shared;
 using MarkPredictor.Shared.Models;
 using MarkPredictor.Views;
+using MarkPredictor.Views.Login;
 using Prism.Events;
 using System.Windows;
 
@@ -20,8 +21,8 @@ namespace MarkPredictor
             base.OnStartup(e);
             ConfigAutofac();
             Common.AutoMapper.Initialize();
-            MainWindow mainWindows = new MainWindow();
-            mainWindows.Show();
+            LoginView login = new LoginView();
+            login.Show();
         }
 
         private void ConfigAutofac()

@@ -61,9 +61,10 @@ namespace MarkPredictor.Common
 
         public async Task<StudentDto> Login(StudentDto studentDto)
         {
-            var request = new RestRequest(Method.GET);
-            request.Resource = $"accounts/login";
+            var request = new RestRequest(Method.POST);
+            request.Resource = @"accounts/login";
             request.RequestFormat = DataFormat.Json;
+            request.AddBody(studentDto);
             var response = await restClient.ExecuteTaskAsync(request);
             return Newtonsoft.Json.JsonConvert.DeserializeObject<StudentDto>(response.Content);
         }

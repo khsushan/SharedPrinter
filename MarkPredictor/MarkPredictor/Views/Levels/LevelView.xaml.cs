@@ -44,7 +44,7 @@ namespace MarkPredictor.Views.Levels
 
         private void LoadLevel4Data(long levelId)
         {
-            if (levelId == _levelDto.Id)
+            if (levelId == _levelDto.Id && _levelDto.Modules != null )
             {
                 levelContentView.Children.Capacity = _levelDto.Modules.Count;
                 levelContentView.Children.Clear();
@@ -69,7 +69,7 @@ namespace MarkPredictor.Views.Levels
 
         private void CalculateLevelAverage(long levelId)
         {
-            if (levelId == _levelDto.Id)
+            if (levelId == _levelDto.Id && _levelDto.Modules != null)
             {
                 var average = 0.0;
                 double creditTotal = _levelDto.Modules.Sum(item => item.Credit);
@@ -97,10 +97,14 @@ namespace MarkPredictor.Views.Levels
 
         private void loadModuleViews()
         {
-            foreach (var moduleDto in _levelDto.Modules)
+            if (_levelDto.Modules != null)
             {
-                levelContentView.Children.Add(new ModuleView(moduleDto));
+                foreach (var moduleDto in _levelDto.Modules)
+                {
+                    levelContentView.Children.Add(new ModuleView(moduleDto));
+                }
             }
+           
         }
 
         public void ModuleAddEvent(ModuleDto moduleDto)

@@ -10,12 +10,13 @@ namespace MarkPredictor.Views
     public partial class MainWindow : System.Windows.Window, INotifyPropertyChanged
     {
         private TabView window;
+        private long _courseId;
 
-        public MainWindow()
+        public MainWindow(long courseId)
         {
             InitializeComponent();;
+            _courseId = courseId;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            window = new TabView();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -33,6 +34,7 @@ namespace MarkPredictor.Views
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            window = new TabView(_courseId);
             this.window.Show();
             this.Close();
         }

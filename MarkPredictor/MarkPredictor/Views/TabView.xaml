@@ -15,9 +15,7 @@
             <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
         <TabControl x:Name="tabControl" Grid.Column="0">
-            <TabItem Header="Module Level">
-                <tabData:ModuleLevelView x:Name="ucTab1Data" />
-            </TabItem>
+            <TabItem Header="Module Level" Name="ModuleLevelTab"/>
             <TabItem Header="Level 4" Name="Level4Tab"/>
             <TabItem Header="Level 5" Name="Level5Tab"/>
             <TabItem Header="Level 6" Name="Level6Tab"/>
