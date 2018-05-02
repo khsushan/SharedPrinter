@@ -43,8 +43,8 @@ namespace MarkPredictor.Views.Summary
             _eventAggregator.GetEvent<SummaryCalculateEvent>().Subscribe(CalculateCourseOutcome);
             _level5Dto = level5Dto;
             _level6Dto = level6Dto;
-            InitializeComponent();          
-            
+            InitializeComponent();
+            CalculateCourseOutcome();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
