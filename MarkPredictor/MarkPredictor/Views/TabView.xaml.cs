@@ -6,8 +6,10 @@ using MarkPredictor.Views.Levels;
 using MarkPredictor.Views.Summary;
 using Prism.Events;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace MarkPredictor.Views
 {
@@ -42,17 +44,17 @@ namespace MarkPredictor.Views
         {
             ModuleLevelTab.Content = new ModuleLevelView(_courseId);
 
-            _level4Dto = await _levelController.GetLevelDetails(1,_courseId);
+            _level4Dto = await _levelController.GetLevelDetails(1, _courseId);
             _level4Dto = _level4Dto == null ? new LevelDto() : _level4Dto;
             _level4View = new LevelView(_level4Dto);
             Level4Tab.Content = _level4View;
 
-            _level5Dto = await _levelController.GetLevelDetails(2,_courseId);
+            _level5Dto = await _levelController.GetLevelDetails(2, _courseId);
             _level5Dto = _level5Dto == null ? new LevelDto() : _level5Dto;
             _level5View = new LevelView(_level5Dto);
             Level5Tab.Content = _level5View;
 
-            _level6Dto = await _levelController.GetLevelDetails(3,_courseId);
+            _level6Dto = await _levelController.GetLevelDetails(3, _courseId);
             _level6Dto = _level6Dto == null ? new LevelDto() : _level6Dto;
             _level6View = new LevelView(_level6Dto);
             Level6Tab.Content = _level6View;
@@ -61,32 +63,32 @@ namespace MarkPredictor.Views
 
         }
 
-        private void exitButton_Click(object sender, RoutedEventArgs e)
+        private async void exitButton_Click(object sender, RoutedEventArgs e)
         {
-
+            await HandleSave();
             Application.Current.Windows[0].Close();
         }
 
-        private async void HandleSave()
+        private async Task HandleSave()
         {
             MessageBoxResult result = MessageBox.Show("Do you need to save the changes before exit", "Mark Predictor", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
+
                 await _level4View.SaveLevelDetails();
                 await _level5View.SaveLevelDetails();
                 await _level6View.SaveLevelDetails();
-
             }
-        }
-
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            HandleSave();
         }
 
         private void SummaryViewTab_Loaded(object sender, RoutedEventArgs e)
         {
             _eventAggregator.GetEvent<SummaryCalculateEvent>().Publish();
+        }
+
+        private async void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+           // await HandleSave();
         }
     }
 }

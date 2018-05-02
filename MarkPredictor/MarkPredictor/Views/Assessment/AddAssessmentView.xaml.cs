@@ -85,6 +85,7 @@ namespace MarkPredictor.Views.Assessment
             {
                 try
                 {
+                    _sumofCurrentAssessmentWeight += assigmentPrecentage;
                     AssessmentDto assigmentDto = new AssessmentDto
                     {
                         Name = assigmentName,

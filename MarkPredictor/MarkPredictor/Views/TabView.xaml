@@ -7,8 +7,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterOwner"
         xmlns:tabData="clr-namespace:MarkPredictor.Views" 
-        Closing="Window_Closing"
-        Title="" Height="600" Width="800">
+        Title="" Height="600" Width="800" Closing="Window_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="15*" />

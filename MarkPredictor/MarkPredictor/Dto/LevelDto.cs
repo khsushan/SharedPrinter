@@ -15,5 +15,10 @@ namespace MarkPredictor.Dto
         public double Average { get; set; }
 
         public IList<ModuleDto> Modules { get; set; }
+
+        public static implicit operator Task(LevelDto v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

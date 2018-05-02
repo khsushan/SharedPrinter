@@ -4,6 +4,7 @@ using MarkPredictor.MessageBus.Event;
 using MarkPredictor.Views.Assessment;
 using Prism.Events;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows;
@@ -49,6 +50,10 @@ namespace MarkPredictor.Views.Module
         {
             if (assessmentDto.ModuleId == _moduleDto.Id)
             {
+                if (_moduleDto.Assessments == null)
+                {
+                    _moduleDto.Assessments = new ObservableCollection<AssessmentDto>();
+                }
                 _moduleDto.Assessments.Add(assessmentDto);
                 AssessmentList = _moduleDto.Assessments;
             }          
@@ -127,7 +132,11 @@ namespace MarkPredictor.Views.Module
 
         private double CalculateSumOfCurrentAssigmentWeight()
         {
-            return _moduleDto.Assessments.Sum(a => a.Weight);
+            if (_moduleDto.Assessments !=  null)
+            {
+                return _moduleDto.Assessments.Sum(a => a.Weight);
+            }
+            return 0;
         }
 
     }
