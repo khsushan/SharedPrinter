@@ -121,6 +121,11 @@ namespace MarkPredictor.Views.Assessment
             }
         }
 
+        /// <summary>
+        /// Validate the text field to only enter numeric values
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void assigmentPrecentageText_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
             int key = (int)e.Key;

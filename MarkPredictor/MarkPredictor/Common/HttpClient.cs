@@ -1,9 +1,7 @@
 ﻿using MarkPredictor.Dto;
 using RestSharp;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Configuration;
 using System.Threading.Tasks;
 
 namespace MarkPredictor.Common
@@ -15,7 +13,8 @@ namespace MarkPredictor.Common
         public HttpClient()
         {
             restClient = new RestClient();
-            restClient.BaseUrl = new Uri(@"http://localhost:9000/");
+            string url = ConfigurationSettings.AppSettings["ServerBaseUrl"].ToString();
+            restClient.BaseUrl = new Uri(url);
         }
 
 

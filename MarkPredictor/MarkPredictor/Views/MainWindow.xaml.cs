@@ -32,6 +32,11 @@ namespace MarkPredictor.Views
             }
         }
 
+        /// <summary>
+        /// Go Button Click Event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_Click(object sender, RoutedEventArgs e)
         {
             window = new TabView(_courseId);
@@ -39,6 +44,11 @@ namespace MarkPredictor.Views
             this.Close();
         }
 
+        /// <summary>
+        /// Exit button click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void exitButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Windows[0].Close();

@@ -45,7 +45,11 @@ namespace MarkPredictor.Views.Module
             AddAssesmentView addAssesmentView = new AddAssesmentView(_moduleDto.Id, CalculateSumOfCurrentAssigmentWeight());
             addAssesmentView.ShowDialog();
         }
-
+        
+        /// <summary>
+        /// Reload the assessment in module when new assessment added
+        /// </summary>
+        /// <param name="assessmentDto"></param>
         private void ReloadAssessment(AssessmentDto assessmentDto)
         {
             if (assessmentDto.ModuleId == _moduleDto.Id)
@@ -123,6 +127,9 @@ namespace MarkPredictor.Views.Module
             }
         }
 
+        /// <summary>
+        /// Calculate the overall average of module
+        /// </summary>
         private void CalculateModuleAverage()
         {
             ModuleAverage = AverageCalculator.CalculateModuleAverage(_moduleDto);
@@ -130,6 +137,10 @@ namespace MarkPredictor.Views.Module
             eventAggregator.GetEvent<LevelMarkChangeEvent>().Publish(_moduleDto.LevelId);
         }
 
+        /// <summary>
+        /// Get all the assigment weight of the module
+        /// </summary>
+        /// <returns></returns>
         private double CalculateSumOfCurrentAssigmentWeight()
         {
             if (_moduleDto.Assessments !=  null)

@@ -69,6 +69,9 @@ namespace MarkPredictor.Views.Summary
             }
         }
 
+        /// <summary>
+        /// Calculate the level average
+        /// </summary>
         private void CalculateCourseOutcome()
         {
             double overallAvg = _level5Dto.Average * 1 / 3 + _level6Dto.Average * 2 / 3;
@@ -76,6 +79,10 @@ namespace MarkPredictor.Views.Summary
             GradeCalculation(overallAvg);
         }
 
+        /// <summary>
+        /// Returns the grade 
+        /// </summary>
+        /// <param name="overallAvg">Overall average of the level5 and level6</param>
         private void GradeCalculation(double overallAvg)
         {
             if (overallAvg >= 70)

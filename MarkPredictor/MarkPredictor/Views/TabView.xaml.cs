@@ -40,6 +40,10 @@ namespace MarkPredictor.Views
             _eventAggregator.GetEvent<SummaryCalculateEvent>().Publish();
         }
 
+        /// <summary>
+        /// Load all tabs with data 
+        /// </summary>
+        /// <returns></returns>
         private async Task LoadTabs()
         {
             ModuleLevelTab.Content = new ModuleLevelView(_courseId);
@@ -69,6 +73,10 @@ namespace MarkPredictor.Views
             Application.Current.Windows[0].Close();
         }
 
+        /// <summary>
+        /// Handle save when user exit the system
+        /// </summary>
+        /// <returns></returns>
         private async Task HandleSave()
         {
             MessageBoxResult result = MessageBox.Show("Do you need to save the changes before exit", "Mark Predictor", MessageBoxButton.YesNo);
@@ -84,11 +92,6 @@ namespace MarkPredictor.Views
         private void SummaryViewTab_Loaded(object sender, RoutedEventArgs e)
         {
             _eventAggregator.GetEvent<SummaryCalculateEvent>().Publish();
-        }
-
-        private async void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-           // await HandleSave();
         }
     }
 }

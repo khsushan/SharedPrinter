@@ -30,25 +30,15 @@ namespace MarkPredictor.Views.Levels
             _eventAggregator = InstanceFactory.GetEventAggregatorInstance();
             _eventAggregator.GetEvent<ModuleLoadEvent>().Subscribe(ModuleAddEvent);
             _eventAggregator.GetEvent<LevelMarkChangeEvent>().Subscribe(ModuleMarkChangeEvent);
-            //_eventAggregator.GetEvent<SaveEvent>().Subscribe(SaveLevelDetails);
             _levelController = new LevelController();
             LevelAverage = 0;
             InitializeComponent();
             _levelDto = levelDto;
-             LoadLevel4Data(_levelDto.Id);
+             LoadLevelData(_levelDto.Id);
             CalculateLevelAverage(_levelDto.Id);
             loadModuleViews();
             
 
-        }
-
-        private void LoadLevel4Data(long levelId)
-        {
-            if (levelId == _levelDto.Id && _levelDto.Modules != null )
-            {
-                levelContentView.Children.Capacity = _levelDto.Modules.Count;
-                levelContentView.Children.Clear();
-            }         
         }
 
         public double LevelAverage
@@ -61,12 +51,31 @@ namespace MarkPredictor.Views.Levels
             }
         }
 
+        /// <summary>
+        /// Load the level data
+        /// </summary>
+        /// <param name="levelId"></param>
+        private void LoadLevelData(long levelId)
+        {
+            if (levelId == _levelDto.Id && _levelDto.Modules != null )
+            {
+                levelContentView.Children.Capacity = _levelDto.Modules.Count;
+                levelContentView.Children.Clear();
+            }         
+        }
+
+     
+
         private void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        /// <summary>
+        /// Calculate the level average 
+        /// </summary>
+        /// <param name="levelId"> level id</param>
         private void CalculateLevelAverage(long levelId)
         {
             if (levelId == _levelDto.Id && _levelDto.Modules != null)
@@ -89,12 +98,19 @@ namespace MarkPredictor.Views.Levels
             
         }
 
+        /// <summary>
+        /// Module mark change event method
+        /// </summary>
+        /// <param name="id"> level id</param>
         private void ModuleMarkChangeEvent(long id)
         {
             CalculateLevelAverage(id);
         }
 
 
+        /// <summary>
+        /// Load module views related to level
+        /// </summary>
         private void loadModuleViews()
         {
             if (_levelDto.Modules != null)
@@ -107,6 +123,10 @@ namespace MarkPredictor.Views.Levels
            
         }
 
+        /// <summary>
+        /// This method will called when new event added 
+        /// </summary>
+        /// <param name="moduleDto"></param>
         public void ModuleAddEvent(ModuleDto moduleDto)
         {
             if (moduleDto.LevelId == _levelDto.Id)
