@@ -1,5 +1,4 @@
 package com.concurrent.student;
-
 import com.concurrent.document.Document;
 import com.concurrent.printer.inf.Printer;
 
@@ -36,7 +35,8 @@ public class Student extends   Thread{
             System.out.println("Thread[ " + this.utilityThread.getName() + " ] printing the document ");
             Document document = new Document(this.studentName,"CW"+numOfPrint, numGen.nextInt(20));
             this.laserPrinter.printDocument(document);
-            System.out.println("Printer state is : " + laserPrinter.toString());
+            System.out.println("Thread[ " + this.utilityThread.getName() + " ] printed  the document printer state is : "
+                    + laserPrinter.toString());
             try{
                 int time = numGen.nextInt(4000)+1000;
                 System.out.println("Thread[ " + this.utilityThread.getName() + " ] waiting for " + time/1000 + " seconds");

@@ -43,6 +43,8 @@ public class PrintingSystem {
         }
 
         System.out.println("-------------All thread successfully terminated -------------------------");
+        System.out.println(" Finl  Printer status is :"+ laserPrinter.toString());
+        System.out.println("-------------------------------------------------------------------------");
 
         laserPrinter.printReport();
 

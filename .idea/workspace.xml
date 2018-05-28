@@ -2,95 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4dcfb7e-347d-4c1e-902c-0a74733bd339" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor.Shared/Entites/Assessment.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor.Shared/Entites/Course.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor.Shared/Entites/Level.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor.Shared/Entites/Module.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor.Shared/Entites/ModuleLevel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor.Shared/Entites/Student.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor.Shared/Enum/AssessmentType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor.Shared/IMarkPredictorDbContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor.Shared/MarkPredictor.Shared.projitems" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor.Shared/MarkPredictor.Shared.shproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor.Shared/MarkPredictorDbContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor.Shared/Models/AssessmentModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor.Shared/Models/CourseModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor.Shared/Models/IModuleModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor.Shared/Models/LevelModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor.Shared/Models/ModuleModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor.Shared/Models/StudentModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/App.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/App.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/App.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Common/AutoMapper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Common/AverageCalculator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Common/HttpClient.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Common/InstanceFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Controllers/Account/AccountController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Controllers/Account/IAccountController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Controllers/Assessment/AsssessmentController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Controllers/Assessment/IAssessmentController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Controllers/CourseController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Controllers/Level/ILevelController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Controllers/Level/LevelController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Controllers/Module/IModuleController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Controllers/Module/ModuleController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Dto/AssessmentDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Dto/LevelDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Dto/ModuleDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Dto/StudentDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/MarkPredictor.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/MessageBus/CompositeEvent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/MessageBus/Event/AssessmentLoadEvent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/MessageBus/Event/LevelMarkChangeEvent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/MessageBus/Event/ModuleLoadEvent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/MessageBus/Event/SaveEvent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/MessageBus/Event/SummaryCalculateEvent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/MessageBus/IMessageBus.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Migrations/201804101220439_InitialCreate.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Migrations/201804101220439_InitialCreate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Migrations/201804101220439_InitialCreate.resx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Migrations/201804150545045_ChangeingCourseNameDatatypeToString.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Migrations/201804150545045_ChangeingCourseNameDatatypeToString.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Migrations/201804150545045_ChangeingCourseNameDatatypeToString.resx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Migrations/201804160157189_AddingAssessmentNameField.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Migrations/201804160157189_AddingAssessmentNameField.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Migrations/201804160157189_AddingAssessmentNameField.resx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Migrations/201804160347210_AddingCreditFieldForModule.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Migrations/201804160347210_AddingCreditFieldForModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Migrations/201804160347210_AddingCreditFieldForModule.resx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Migrations/201804161503178_AddingModuleIdColumntoAssessment.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Migrations/201804161503178_AddingModuleIdColumntoAssessment.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Migrations/201804161503178_AddingModuleIdColumntoAssessment.resx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Migrations/Configuration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Properties/AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Properties/Resources.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Properties/Resources.resx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Properties/Settings.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Properties/Settings.settings" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Views/Assessment/AddAssessmentView.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Views/Assessment/AddAssessmentView.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Views/Levels/LevelView.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Views/Levels/LevelView.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Views/Login/LoginView.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Views/Login/LoginView.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Views/MainWindow.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Views/MainWindow.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Views/Module/AddModuleView.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Views/Module/AddModuleView.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Views/Module/ModuleView.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Views/Module/ModuleView.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Views/ModuleLevelView.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Views/ModuleLevelView.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Views/Summary/SummaryView.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Views/Summary/SummaryView.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Views/TabView.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/Views/TabView.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarkPredictor/MarkPredictor/packages.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/concurrent/main/PrintingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/concurrent/main/PrintingSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/concurrent/student/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/concurrent/student/Student.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -104,16 +17,14 @@
     <favorites_list name="Concurrent_CW1" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="LaserPrinter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/concurrent/printer/imp/LaserPrinter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="221">
               <caret line="16" column="73" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3305#3306#0" expanded="true" />
-                <element signature="e#3350#3351#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,7 +33,7 @@
       <file leaf-file-name="PaperTechnician.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/concurrent/technician/PaperTechnician.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="340">
               <caret line="23" column="80" selection-start-line="23" selection-start-column="80" selection-end-line="23" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -134,8 +45,8 @@
       <file leaf-file-name="Student.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/concurrent/student/Student.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="38" column="80" selection-start-line="38" selection-start-column="80" selection-end-line="38" selection-end-column="80" />
+            <state relative-caret-position="-428">
+              <caret column="31" selection-start-column="31" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -146,12 +57,10 @@
       <file leaf-file-name="PrinterReport.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/concurrent/printer/report/PrinterReport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
+            <state relative-caret-position="272">
               <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#297#298#0" expanded="true" />
-                <element signature="e#316#317#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -160,8 +69,8 @@
       <file leaf-file-name="PrintingSystem.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/concurrent/main/PrintingSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+            <state relative-caret-position="248">
+              <caret line="29" column="37" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -172,7 +81,7 @@
       <file leaf-file-name="Technician.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/concurrent/technician/Technician.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-105">
+            <state relative-caret-position="68">
               <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
             </state>
           </provider>
@@ -181,7 +90,7 @@
       <file leaf-file-name="TornerTechnican.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/concurrent/technician/TornerTechnican.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="323">
               <caret line="21" column="80" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -193,7 +102,7 @@
       <file leaf-file-name="Thread.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/Thread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
+            <state relative-caret-position="21267">
               <caret line="1324" column="22" selection-start-line="1324" selection-start-column="22" selection-end-line="1324" selection-end-column="22" />
             </state>
           </provider>
@@ -202,7 +111,7 @@
       <file leaf-file-name="Document.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/concurrent/document/Document.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
+            <state relative-caret-position="663">
               <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
             </state>
           </provider>
@@ -232,10 +141,10 @@
         <option value="$PROJECT_DIR$/src/com/concurrent/technician/Technician.java" />
         <option value="$PROJECT_DIR$/src/com/concurrent/technician/TornerTechnican.java" />
         <option value="$PROJECT_DIR$/src/com/concurrent/technician/PaperTechnician.java" />
-        <option value="$PROJECT_DIR$/src/com/concurrent/student/Student.java" />
         <option value="$PROJECT_DIR$/src/com/concurrent/printer/report/PrinterReport.java" />
-        <option value="$PROJECT_DIR$/src/com/concurrent/main/PrintingSystem.java" />
         <option value="$PROJECT_DIR$/src/com/concurrent/printer/imp/LaserPrinter.java" />
+        <option value="$PROJECT_DIR$/src/com/concurrent/main/PrintingSystem.java" />
+        <option value="$PROJECT_DIR$/src/com/concurrent/student/Student.java" />
       </list>
     </option>
   </component>
@@ -248,11 +157,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
     <option name="width" value="1750" />
-    <option name="height" value="983" />
+    <option name="height" value="984" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -260,6 +169,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -318,9 +230,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -420,41 +329,43 @@
       <option name="presentableId" value="Default" />
       <updated>1527476422207</updated>
       <workItem from="1527476427040" duration="18037000" />
+      <workItem from="1527505465622" duration="901000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18037000" />
+    <option name="totallyTimeSpent" value="18938000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info id="Image Layers" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.45926967" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info id="Capture Tool" />
-      <window_info id="Designer" />
+      <window_info anchor="bottom" id="Messages" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.45926967" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49931973" visible="true" weight="0.25" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286517" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" />
-      <window_info anchor="right" id="Theme Preview" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Favorites" order="2" sideWeight="0.50068027" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" sideWeight="0.50068027" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286517" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
     </layout>
@@ -466,16 +377,97 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/concurrent/printer/imp/LaserPrinter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" column="73" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/concurrent/technician/PaperTechnician.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="23" column="80" selection-start-line="23" selection-start-column="80" selection-end-line="23" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/concurrent/printer/report/PrinterReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/concurrent/main/PrintingSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/concurrent/technician/Technician.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/concurrent/technician/TornerTechnican.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="80" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22508">
+          <caret line="1324" column="22" selection-start-line="1324" selection-start-column="22" selection-end-line="1324" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/concurrent/document/Document.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
+        <state relative-caret-position="663">
+          <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/concurrent/student/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="38" column="80" selection-start-line="38" selection-start-column="80" selection-end-line="38" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/concurrent/document/Document.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
           <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
+        <state relative-caret-position="21267">
           <caret line="1324" column="22" selection-start-line="1324" selection-start-column="22" selection-end-line="1324" selection-end-column="22" />
         </state>
       </provider>
@@ -503,7 +495,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/concurrent/technician/PaperTechnician.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="340">
           <caret line="23" column="80" selection-start-line="23" selection-start-column="80" selection-end-line="23" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -513,19 +505,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/concurrent/printer/imp/LaserPrinter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="221">
           <caret line="16" column="73" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3305#3306#0" expanded="true" />
-            <element signature="e#3350#3351#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/concurrent/technician/TornerTechnican.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="323">
           <caret line="21" column="80" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -535,37 +525,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/concurrent/technician/Technician.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
+        <state relative-caret-position="68">
           <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/concurrent/main/PrintingSystem.java">
+    <entry file="file://$PROJECT_DIR$/src/com/concurrent/printer/report/PrinterReport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        <state relative-caret-position="272">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/concurrent/printer/report/PrinterReport.java">
+    <entry file="file://$PROJECT_DIR$/src/com/concurrent/main/PrintingSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        <state relative-caret-position="248">
+          <caret line="29" column="37" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#297#298#0" expanded="true" />
-            <element signature="e#316#317#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/concurrent/student/Student.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="38" column="80" selection-start-line="38" selection-start-column="80" selection-end-line="38" selection-end-column="80" />
+        <state relative-caret-position="-428">
+          <caret column="31" selection-start-column="31" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
